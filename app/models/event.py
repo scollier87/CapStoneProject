@@ -2,12 +2,13 @@ from .db import db
 from sqlalchemy.schema import ForeignKey
 from sqlalchemy.orm import relationship
 from .user import User
+# from .booking import Booking
 
 class Event(db.Model):
     __tablename__ = 'events'
 
     id = db.Column(db.Integer, primary_key=True)
-    owner_id = db.Column(db.Integer, ForeignKey('users.id'))
+    owner_id = db.Column(db.Integer, ForeignKey('users.id'), nullable=False)
     event_time = db.Column(db.DateTime)
     how_many_kids = db.Column(db.Integer)
     description = db.Column(db.String(300))
@@ -15,7 +16,7 @@ class Event(db.Model):
     created_at = db.Column(db.Date, nullable=True)
 
     owner = relationship("User", back_populates="events")
-    bookings = relationship("Booking", back_populates="events")
+    bookings = relationship("Booking", back_populates="event")
 
     def to_dict(self):
         return {

@@ -20,6 +20,7 @@ class User(db.Model, UserMixin):
     bookings = relationship("Booking", back_populates="owner")
     events = relationship("Event", back_populates="owner")
     images = relationship("Image", back_populates="parent")
+    reviews = relationship("Review", back_populates="owner")
 
     @property
     def password(self):
