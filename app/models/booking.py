@@ -8,14 +8,14 @@ class Booking(db.Model):
     __tablename__ = 'bookings'
 
     id = db.Column(db.Integer, primary_key=True)
-    owner_id = db.Column(db.Integer, ForeignKey('users.id'))
-    event_id = db.Column(db.Integer, ForeignKey('events.id'))
+    owner_id = db.Column(db.Integer, ForeignKey('users.id'), nullable=False)
+    event_id = db.Column(db.Integer, ForeignKey('events.id'), nullable=False)
     first_name = db.Column(db.String(30), nullable=True)
     last_name = db.Column(db.String(30), nullable=True)
     created_at = db.Column(db.DateTime, nullable=True)
 
     owner = relationship("User", back_populates="bookings")
-    events = relationship("Event", back_populates="bookings")
+    event = relationship("Event", back_populates="bookings")
 
     def to_dict(self):
         return {

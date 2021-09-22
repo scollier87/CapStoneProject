@@ -5,7 +5,7 @@ class Review(db.Model):
     __tablename__ = 'reviews'
 
     id = db.Column(db.Integer, primary_key=True)
-    owner_id = db.Column(db.Integer, ForeignKey('users.id'))
+    owner_id = db.Column(db.Integer, ForeignKey('users.id'), nullable=False)
     body = db.Column(db.String(250))
     created_at = db.Column(db.DateTime, nullable=True)
 
