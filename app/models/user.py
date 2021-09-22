@@ -1,15 +1,25 @@
 from .db import db
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+from sqlalchemy.schema import ForeignKey
+from sqlalchemy.orm import relationship
+from .review import Review
 
 
 class User(db.Model, UserMixin):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(40), nullable=False, unique=True)
+    parent_pic = db.Column(db.String)
     email = db.Column(db.String(255), nullable=False, unique=True)
+    first_name = db.Column(db.String(30), nullable=True)
+    last_name = db.Column(db.String(30), nullable=True)
     hashed_password = db.Column(db.String(255), nullable=False)
+
+
+    bookings = relationship("Booking", back_populates="owner")
+    events = relationship("Event", back_populates="owner")
+    images = relationship("Image", back_populates="parent")
 
     @property
     def password(self):
@@ -25,6 +35,9 @@ class User(db.Model, UserMixin):
     def to_dict(self):
         return {
             'id': self.id,
-            'username': self.username,
-            'email': self.email
+            'parent_pic': self.parent_pic,
+            'email': self.email,
+            'first_name': self.first_name,
+            'last_name': self.last_name,
+            # 'review_id': self.review_id
         }
