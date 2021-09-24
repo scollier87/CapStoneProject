@@ -10,6 +10,7 @@ class User(db.Model, UserMixin):
     __tablename__ = 'users'
 
     id = db.Column(db.Integer, primary_key=True)
+    username = db.Column(db.String(25), nullable=False, unique=True)
     parent_pic = db.Column(db.String)
     email = db.Column(db.String(255), nullable=False, unique=True)
     first_name = db.Column(db.String(30), nullable=True)
@@ -36,6 +37,7 @@ class User(db.Model, UserMixin):
     def to_dict(self):
         return {
             'id': self.id,
+            'username': self.username,
             'parent_pic': self.parent_pic,
             'email': self.email,
             'first_name': self.first_name,

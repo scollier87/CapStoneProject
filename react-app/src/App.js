@@ -8,6 +8,9 @@ import ProtectedRoute from './components/auth/ProtectedRoute';
 import UsersList from './components/UsersList';
 import User from './components/User';
 import { authenticate } from './store/session';
+import NewEventForm from './components/event_createForm/eventForm';
+import GetAllEvents from './components/event_getForm/index'
+import UpdateEventForm from './components/event_updateForm';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -43,6 +46,16 @@ function App() {
         <ProtectedRoute path='/' exact={true} >
           <h1>My Home Page</h1>
         </ProtectedRoute>
+        <ProtectedRoute path='/events' exact={true}>
+          <NewEventForm/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/eventslist' exact={true}>
+          <GetAllEvents/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/events/:id' exact={true}>
+          <UpdateEventForm/>
+        </ProtectedRoute>
+
       </Switch>
     </BrowserRouter>
   );

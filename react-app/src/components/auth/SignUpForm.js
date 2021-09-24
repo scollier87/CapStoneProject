@@ -6,6 +6,8 @@ import { signUp } from '../../store/session';
 const SignUpForm = () => {
   const [errors, setErrors] = useState([]);
   const [username, setUsername] = useState('');
+  const [first_name, setFirst_name] = useState('')
+  const [last_name, setLast_name] = useState('')
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [repeatPassword, setRepeatPassword] = useState('');
@@ -15,16 +17,26 @@ const SignUpForm = () => {
   const onSignUp = async (e) => {
     e.preventDefault();
     if (password === repeatPassword) {
-      const data = await dispatch(signUp(username, email, password));
+      const data = await dispatch(signUp(username, first_name, last_name, email, password));
       if (data) {
         setErrors(data)
+        console.log(errors)
       }
     }
   };
 
+
   const updateUsername = (e) => {
     setUsername(e.target.value);
   };
+
+  const updateFirst_name = (e) => {
+    setFirst_name(e.target.value)
+  }
+
+  const updateLast_name = (e) => {
+    setLast_name(e.target.value)
+  }
 
   const updateEmail = (e) => {
     setEmail(e.target.value);
@@ -56,6 +68,24 @@ const SignUpForm = () => {
           name='username'
           onChange={updateUsername}
           value={username}
+        ></input>
+      </div>
+      <div>
+        <label>First Name</label>
+        <input
+          type='text'
+          name="first_name"
+          onChange={updateFirst_name}
+          value={first_name}
+        ></input>
+      </div>
+      <div>
+        <label>Last Name</label>
+        <input
+          type='text'
+          name="last_name"
+          onChange={updateLast_name}
+          value={last_name}
         ></input>
       </div>
       <div>
