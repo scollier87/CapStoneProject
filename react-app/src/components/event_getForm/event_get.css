@@ -1,0 +1,35 @@
+.eventList_container{
+    border: 3px solid black;
+    height: 400px;
+    width: 300px;
+    flex-direction: column;
+}
+
+.eventList_containerLabel {
+    display: flex;
+    justify-content: center;
+    display: block;
+    margin: 0 auto;
+}
+
+.event_getKeys{
+    border: 3px solid black;
+    height: 50px;
+    width: 75px;
+    display: block;
+    margin: 0 auto;
+}
+
+.deleteOneEvent{
+    font-size:medium;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding:10px;
+    border-radius: 30px;
+    background-color:pink;
+    border: 8px solid lightblue;
+    color:rgb(196, 69, 90);
+    width: 100px;
+    font-weight:lighter;
+    display: block;
+}
