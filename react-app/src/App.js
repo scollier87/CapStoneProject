@@ -11,6 +11,7 @@ import { authenticate } from './store/session';
 import NewEventForm from './components/event_createForm/eventForm';
 import GetAllEvents from './components/event_getForm/index'
 import UpdateEventForm from './components/event_updateForm';
+import GetAllBookings from './components/booking_getForm';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -49,11 +50,14 @@ function App() {
         <ProtectedRoute path='/events' exact={true}>
           <NewEventForm/>
         </ProtectedRoute>
-        <ProtectedRoute path='/eventslist' exact={true}>
+        <ProtectedRoute path='/eventsuser' exact={true}>
           <GetAllEvents/>
         </ProtectedRoute>
         <ProtectedRoute path='/events/:id' exact={true}>
           <UpdateEventForm/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/bookingsuser' exact={true}>
+          <GetAllBookings/>
         </ProtectedRoute>
 
       </Switch>

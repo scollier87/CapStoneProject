@@ -52,13 +52,13 @@ export const createOneBooking = (payload) => async dispatch => {
     return newBooking
 }
 
-export const deleteEvent = eventId => async dispatch => {
-    const response = await fetch(`/api/events/${eventId}`, {
+export const deleteBooking = bookingId => async dispatch => {
+    const response = await fetch(`/api/events/${bookingId}`, {
         method: 'DELETE'
     })
 
     if (response.ok) {
-        dispatch(removeBooking(eventId))
+        dispatch(removeBooking(bookingId))
     }
 }
 

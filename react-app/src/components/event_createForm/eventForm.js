@@ -21,7 +21,7 @@ function NewEventForm(){
     const updateHow_many_kids = (e) => setHow_many_kids(e.target.value);
     const updateDescription = (e) => setDescription(e.target.value);
     const updateCost = (e) => setCost(e.target.value);
-    
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -36,7 +36,7 @@ function NewEventForm(){
 
     const event = await dispatch(createOneEvent(payload))
         if(event){
-            history.push(`/currentEvents`)
+            history.push(`/eventslist`)
         }
     }
 
