@@ -63,7 +63,7 @@
         text-decoration: none;
     }
 
-    /* .actual_eventUpdateBtn{
+    .actual_eventUpdateBtn{
         text-decoration: none;
         border: none;
         background-color: lightblue;
@@ -71,4 +71,5 @@
         display: flex;
         margin-left: 20px;
         font: bold;
-    } */
+        background-color: transparent;
+    }

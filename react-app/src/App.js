@@ -46,10 +46,10 @@ function App() {
         <ProtectedRoute path='/users/:userId' exact={true} >
           <User />
         </ProtectedRoute>
-        <ProtectedRoute path='/' exact={true} >
-          <h1>My Home Page</h1>
+        <Route path='/' exact={true} >
+          <h1>Splash</h1>
           <SplashPage/>
-        </ProtectedRoute>
+        </Route>
         <ProtectedRoute path='/events' exact={true}>
           <NewEventForm/>
         </ProtectedRoute>

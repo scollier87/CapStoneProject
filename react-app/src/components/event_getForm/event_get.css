@@ -1,9 +1,18 @@
 .eventList_container{
-    border: 3px solid black;
-    height: 400px;
-    width: 300px;
+    /* border: 3px solid black; */
+    height: 600px;
+    width: auto;
     flex-direction: column;
+    /* background-color: lightblue; */
     /* border-radius: 20px; */
+    height: max-content;
+    padding-top: 25px;
+    text-align: center;
+    font-weight: bold;
+    font-size: larger;
+    background-color: lightblue;
+    color: palevioletred;
+    border-radius: 20px;
 }
 
 .eventList_containerLabel {
@@ -11,14 +20,21 @@
     justify-content: center;
     display: block;
     margin: 0 auto;
+    /* border: 3px solid black; */
+    height: 100px;
+    width: 525px;
+    background-color: transparent;
+    /* padding-top: 5px; */
 }
 
 .event_getKeys{
-    border: 3px solid black;
-    height: 50px;
-    width: 75px;
+    /* border: 3px solid black; */
+    background-color: transparent;
+    height: 120px;
+    width: 525px;
     display: block;
     margin: 0 auto;
+    padding-bottom: 10px;
 }
 
 .deleteOneEvent{
@@ -29,7 +45,7 @@
     border-radius: 30px;
     background-color:pink;
     border: 8px solid lightblue;
-    color:rgb(196, 69, 90);
+    color:blue;
     width: 100px;
     font-weight:lighter;
     display: block;
@@ -43,7 +59,7 @@
     border-radius: 30px;
     background-color:pink;
     border: 8px solid lightblue;
-    color:rgb(196, 69, 90);
+    color:blue;
     width: 100px;
     font-weight:lighter;
     display: block;
@@ -58,8 +74,17 @@
     border-radius: 30px;
     background-color:pink;
     border: 8px solid lightblue;
-    color:rgb(196, 69, 90);
+    color:blue;
     width: 100px;
     font-weight:lighter;
     display: block;
+    text-decoration: none;
+}
+
+.event_GetButtons{
+    display: flex;
+    justify-content: space-evenly;
+    width: 525px;
+    margin-left: 820px;
+    padding-bottom: 45px;
 }
