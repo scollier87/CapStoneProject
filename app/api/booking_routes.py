@@ -40,7 +40,6 @@ def new_booking():
         )
     db.session.add(booking)
     db.session.commit()
-
     return booking.to_dict()
 
 

@@ -1,0 +1,47 @@
+
+
+.spl_container{
+    border: 3px solid black;
+    height: 1015px;
+    width: auto;
+}
+
+.spl_containerLeft{
+    border: 3px solid black;
+    margin-top: 100px;
+    margin-left: 175px;
+    height: 500px;
+    width: 800px;
+}
+
+.spl_containerLeftImg{
+
+}
+
+.spl_containerRight{
+    border: 3px solid black;
+    margin-top: -500px;
+    margin-left: 1125px;
+    height: 500px;
+    width: 800px;
+}
+
+.spl_containerRightImg{
+
+}
+
+.spl_Footer{
+    border: 3px solid black;
+    width: 1800px;
+    height: 100px;
+    margin-top: 25px;
+    margin-left: 150px;
+}
+
+.spl_newsFeed{
+    border: 3px solid black;
+    height: 200px;
+    width: 1800px;
+    margin-left: 150px;
+    margin-top: 50px;
+}
