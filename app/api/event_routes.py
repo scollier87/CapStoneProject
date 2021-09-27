@@ -1,6 +1,6 @@
 from app.models import event
 from flask import Blueprint, request
-from ..models import Event, Booking, db
+from ..models import Event, Booking, User, db
 # from datetime import datetime
 
 event_routes = Blueprint('events', __name__)
@@ -10,6 +10,9 @@ def events():
     events = Event.query.all()
     bookings = Booking.query.all()
 
+    # events = db.session.query(Event, User).join(User).all()
+    # bookings = db.session.query(Booking, User).join(User).all()
+    # return {"events":[event.to_dict() for event in events]}
     return {'events': [ {
         'id' : event.id,
         'owner_id' : event.owner.id,

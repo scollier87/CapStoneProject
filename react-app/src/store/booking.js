@@ -47,13 +47,14 @@ export const createOneBooking = (payload) => async dispatch => {
     let newBooking
     if (response.ok) {
         newBooking = await response.json();
+        newBooking.events = []
         dispatch(addOneBooking(newBooking))
     }
     return newBooking
 }
 
 export const deleteBooking = bookingId => async dispatch => {
-    const response = await fetch(`/api/events/${bookingId}`, {
+    const response = await fetch(`/api/bookings/${bookingId}`, {
         method: 'DELETE'
     })
 

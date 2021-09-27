@@ -3,6 +3,7 @@
     height: 400px;
     width: 300px;
     flex-direction: column;
+    /* border-radius: 20px; */
 }
 
 .eventList_containerLabel {
@@ -21,6 +22,35 @@
 }
 
 .deleteOneEvent{
+    font-size:medium;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding:10px;
+    border-radius: 30px;
+    background-color:pink;
+    border: 8px solid lightblue;
+    color:rgb(196, 69, 90);
+    width: 100px;
+    font-weight:lighter;
+    display: block;
+}
+
+.updateOneEvent_Button{
+    font-size:medium;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding:10px;
+    border-radius: 30px;
+    background-color:pink;
+    border: 8px solid lightblue;
+    color:rgb(196, 69, 90);
+    width: 100px;
+    font-weight:lighter;
+    display: block;
+    text-decoration: none;
+}
+
+.bookEvent_button{
     font-size:medium;
     margin: 0 auto;
     margin-top: 15px;

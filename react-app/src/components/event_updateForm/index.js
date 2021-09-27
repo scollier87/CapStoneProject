@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { createOneEvent, updateEvent, getEvents} from '../../store/event'
 import { useParams } from 'react-router'
+import { NavLink } from 'react-router-dom'
+import './event_updateForm.css'
 
 
 function UpdateEventForm(){
@@ -38,7 +40,7 @@ function UpdateEventForm(){
 
         const eventUpdate = await dispatch(updateEvent(payload))
             if (eventUpdate) {
-                history.push(`/eventslist`)
+                history.push(`/eventsuser`)
         }
     }
         useEffect(() => {
@@ -53,7 +55,7 @@ function UpdateEventForm(){
                     <div className='updateEvent_form'>
                     <h1 className='event_containerupdateLabel'>Update Event</h1>
                         <label className='event_updateLabel'>What time?</label>
-                        <input className='event_updatedInput' value={event_time} defaultValue={events?.event_time} onChange={updateEvent_time}></input>
+                        <input className='event_updatedInput' value={event_time} defaultValue={events?.event_time} onChange={updateEvent_time} type='datetime-local'></input>
                         <label className='event_updateLabel'>How many kids?</label>
                         <input className='event_updatedInput' value={how_many_kids} defaultValue={events?.how_many_kids} onChange={updateHow_many_kids}></input>
                         <label className='event_updateLabel'>Description</label>
@@ -62,6 +64,7 @@ function UpdateEventForm(){
                         <input className='event_updatedInput' value={cost} defaultValue={events?.cost} onChange={updateCost}></input>
 
                         <a className='eventButtonUpdate' href='/eventsupdate'><button type='submit'>Update</button></a>
+                        {/* <NavLink className='eventButtonUpdate' to='/eventsupdate'>Update</NavLink> */}
                     </div>
 
                 </form>

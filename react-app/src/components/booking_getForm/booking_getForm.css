@@ -1,0 +1,44 @@
+/* .eventList_outsideContainer{
+    border: 3px solid black;
+    height: 600px;
+    width: 400px;
+    flex-direction: column;
+} */
+
+
+.eventList_insideContainer{
+    border: 3px solid black;
+    display: flex;
+}
+
+.eventList_containerLabel{
+    display: flex;
+    justify-content: center;
+    display: block;
+    margin: 0 auto;
+}
+.booking_div{
+border: 3px solid black;
+}
+
+.booking_getKeys{
+    /* border: 3px solid black; */
+    height: 50px;
+    width: 200px;
+    /* display: block; */
+    /* margin: 0 auto; */
+}
+
+.deleteOneBooking{
+    font-size:medium;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding:10px;
+    border-radius: 30px;
+    background-color:pink;
+    border: 8px solid lightblue;
+    color:rgb(196, 69, 90);
+    width: 100px;
+    font-weight:lighter;
+    display: block;
+}

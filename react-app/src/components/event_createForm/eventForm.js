@@ -36,15 +36,15 @@ function NewEventForm(){
 
     const event = await dispatch(createOneEvent(payload))
         if(event){
-            history.push(`/eventslist`)
+            history.push(`/eventsuser`)
         }
     }
 
     return(
         <div>
             <form className='newEventFormContainer'>
-                <label className='event_formFields'>What time is the Event?</label>
-                <input className='event_formInput' value={event_time} onChange={updateEvent_time}></input>
+                <label className='event_formFields'>What time is the event Event?</label>
+                <input className='event_formInput' value={event_time} onChange={updateEvent_time} type='datetime-local'></input>
                 <label className='event_formFields'>How many children?</label>
                 <input className='event_formInput' value={how_many_kids} onChange={updateHow_many_kids}></input>
                 <label className='event_formFields'>Describe what needs to be done.</label>

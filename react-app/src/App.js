@@ -12,6 +12,8 @@ import NewEventForm from './components/event_createForm/eventForm';
 import GetAllEvents from './components/event_getForm/index'
 import UpdateEventForm from './components/event_updateForm';
 import GetAllBookings from './components/booking_getForm';
+import NewBookingForm from './components/booking_createForm';
+import SplashPage from './components/splashPage';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -46,6 +48,7 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/' exact={true} >
           <h1>My Home Page</h1>
+          <SplashPage/>
         </ProtectedRoute>
         <ProtectedRoute path='/events' exact={true}>
           <NewEventForm/>
@@ -58,6 +61,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/bookingsuser' exact={true}>
           <GetAllBookings/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/bookings/:id' exact={true}>
+          <NewBookingForm/>
         </ProtectedRoute>
 
       </Switch>
