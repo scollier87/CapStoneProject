@@ -63,8 +63,7 @@ function UpdateEventForm(){
                         <label className='event_updateLabel'>How much are you paying?</label>
                         <input className='event_updatedInput' value={cost} defaultValue={events?.cost} onChange={updateCost}></input>
 
-                        <a className='eventButtonUpdate' href='/eventsupdate'><button type='submit'>Update</button></a>
-                        {/* <NavLink className='eventButtonUpdate' to='/eventsupdate'>Update</NavLink> */}
+                        <a className='eventButtonUpdate' href='/eventsupdate'><button className='actual_eventUpdateBtn' type='submit'>Update</button></a>
                     </div>
 
                 </form>
