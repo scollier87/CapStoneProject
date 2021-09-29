@@ -1,0 +1,66 @@
+.hm_backgroundOuter{
+    border: 3px solid black;
+    height: 1000px;
+    width: 1200px;
+    justify-content: center;
+    display: table-row;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.hm_myCreatedEventsContainer{
+    border: 3px solid black;
+    width: 400px;
+    overflow: auto;
+    position: fixed;
+    top: 200px;
+    bottom: 500px;
+    left: 50px;
+}
+
+.hm_createdEvents{
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.hm_myCreatedBookingsContainer{
+    border:3px solid black;
+    width: 400px;
+    overflow: auto;
+    position: fixed;
+    top: 200px;
+    bottom: 500px;
+    right: 50px;
+}
+
+.hm_createdBookings{
+    list-style-type: none;
+    text-decoration: none;
+}
+
+.hm_myBookingsButton{
+    border: 3px solid black;
+    text-decoration: none;
+}
+
+.hm_myEventsButton{
+    border: 3px solid black;
+    text-decoration: none;
+}
+
+.hm_bioDiv{
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    height: 300px;
+    width: 700px;
+    margin-left: 720px;
+    margin-top: 200px;
+}
+
+.hm_createdEventsBorder{
+    border: 3px solid black;
+    margin-bottom: 5%;
+}

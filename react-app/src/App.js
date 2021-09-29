@@ -14,6 +14,7 @@ import UpdateEventForm from './components/event_updateForm';
 import GetAllBookings from './components/booking_getForm';
 import NewBookingForm from './components/booking_createForm';
 import SplashPage from './components/splashPage';
+import Home from './components/home';
 
 function App() {
   const [loaded, setLoaded] = useState(false);
@@ -32,9 +33,11 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
+
       <Switch>
+
         <Route path='/login' exact={true}>
+          <NavBar/>
           <LoginForm />
         </Route>
         <Route path='/sign-up' exact={true}>
@@ -64,6 +67,9 @@ function App() {
         </ProtectedRoute>
         <ProtectedRoute path='/bookings/:id' exact={true}>
           <NewBookingForm/>
+        </ProtectedRoute>
+        <ProtectedRoute path='/home' exact={true}>
+          <Home/>
         </ProtectedRoute>
 
       </Switch>

@@ -31,6 +31,7 @@ def bookings():
 
 @booking_routes.route('', methods=['POST'])
 def new_booking():
+    print('This is working***************')
     booking = Booking (
         owner_id=int(request.json['owner_id']),
         event_id=int(request.json['event_id']),
@@ -40,6 +41,7 @@ def new_booking():
         )
     db.session.add(booking)
     db.session.commit()
+
     return booking.to_dict()
 
 

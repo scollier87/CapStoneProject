@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+import LogoutButton from '../auth/LogoutButton';
 import './splashPage.css'
 
 function SplashPage() {
@@ -5,6 +7,8 @@ function SplashPage() {
 
 
     return(
+        <>
+        <LogoutButton to='/login'/>
         <div className='spl_container'>
             <div className='spl_containerLeft'>
                 <div className='spl_containerLeftImg'>
@@ -24,6 +28,7 @@ function SplashPage() {
             </div>
         </div>
 
+        </>
     )
 
 };

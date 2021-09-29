@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { signUp } from '../../store/session';
 
 const SignUpForm = () => {
-  const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState({});
   const [username, setUsername] = useState('');
   const [first_name, setFirst_name] = useState('')
   const [last_name, setLast_name] = useState('')
@@ -28,36 +28,101 @@ const SignUpForm = () => {
 
   const updateUsername = (e) => {
     setUsername(e.target.value);
+    let temporaryErrors = {...errors}
+      if(e.target.value === '' || e.target.value === ' '){
+        temporaryErrors.username = 'Must provide username'
+        setErrors(temporaryErrors)
+      } else {
+        delete temporaryErrors.username
+        setErrors(temporaryErrors)
+      }
   };
 
   const updateFirst_name = (e) => {
     setFirst_name(e.target.value)
+    let temporaryErrors = {...errors}
+    if(e.target.value === '' || e.target.value === ' ') {
+      temporaryErrors.first_name = 'Must provide a first name'
+      setErrors(temporaryErrors)
+    } else {
+      delete temporaryErrors.first_name
+      setErrors(temporaryErrors)
+    }
   }
 
   const updateLast_name = (e) => {
     setLast_name(e.target.value)
+    let temporaryErrors = {...errors}
+    if(e.target.value === '' || e.target.value === ' ') {
+      temporaryErrors.last_name = 'Must provide a Last name'
+      setErrors(temporaryErrors)
+    } else {
+      delete temporaryErrors.last_name
+      setErrors(temporaryErrors)
+    }
   }
 
   const updateEmail = (e) => {
     setEmail(e.target.value);
+    let temporaryErrors = {...errors}
+    let correctEmail = []
+    let splitEmail = email.split('')
+    for (let characters in splitEmail){
+      let character = splitEmail[characters]
+
+        if(character === "@"){
+          correctEmail.push(true)
+        }
+
+        if(character === '.'){
+          correctEmail.push(true)
+        }
+
+    }
+    if(correctEmail.length < 2){
+      temporaryErrors.email = 'Must be a valid email'
+      setErrors(temporaryErrors)
+    } else {
+      delete temporaryErrors.email
+      setErrors(temporaryErrors)
+    }
   };
 
   const updatePassword = (e) => {
     setPassword(e.target.value);
+    let temporaryErrors = {...errors}
+    if(e.target.value < 1) {
+      temporaryErrors.password = 'Must enter a password'
+      setErrors(temporaryErrors)
+    } else {
+      delete temporaryErrors.password
+      setErrors(temporaryErrors)
+    }
   };
 
   const updateRepeatPassword = (e) => {
     setRepeatPassword(e.target.value);
+    let temporaryErrors = {...errors}
+    if(e.target.value!==password) {
+      temporaryErrors.repeatPassword = 'Passwords must match'
+      setErrors(temporaryErrors)
+    } else {
+      delete temporaryErrors.repeatPassword
+      setErrors(temporaryErrors)
+    }
   };
+
 
   if (user) {
     return <Redirect to='/' />;
   }
 
+  const currentErrors = Object.values(errors)
+  console.log(username)
   return (
     <form onSubmit={onSignUp}>
       <div>
-        {errors.map((error, ind) => (
+        {currentErrors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
       </div>

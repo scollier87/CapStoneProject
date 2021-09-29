@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { getEvents,  deleteEvent} from '../../store/event'
+import { Link } from 'react-router-dom'
+import LogoutButton from '../auth/LogoutButton'
 import './event_get.css'
 
 function GetAllEvents() {
@@ -22,6 +24,8 @@ function GetAllEvents() {
 
     return (
         <div className='eventList_container'>
+            <Link to={`./home`} className='eventList_HomeBtn'>Home</Link>
+            <LogoutButton/>
             <h1 className='eventList_containerLabel'>Events</h1>
                 {filteredEvents.map((event) => (
                     <>
@@ -32,7 +36,7 @@ function GetAllEvents() {
                     <div className='event_GetButtons'>
                     <button className='deleteOneEvent' onClick={(e)=>handldDelete(event.id)}> Delete Event </button>
                     <a  className='updateOneEvent_Button' href={`/events/${event.id}`}> Update Event </a>
-                    <a className="bookEvent_button" href={`/bookings/${event.id}`}> Book Event? </a>
+                    {/* <a className="bookEvent_button" href={`/bookings/${event.id}`}> Book Event? </a> */}
                     </div>
                     </>
                 ))}
