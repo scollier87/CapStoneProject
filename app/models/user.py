@@ -11,7 +11,7 @@ class User(db.Model, UserMixin):
 
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(25), nullable=False, unique=True)
-    parent_pic = db.Column(db.String)
+    parent_pic = db.Column(db.String, nullable=False)
     email = db.Column(db.String(255), nullable=False, unique=True)
     first_name = db.Column(db.String(30), nullable=True)
     last_name = db.Column(db.String(30), nullable=True)

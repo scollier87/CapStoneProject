@@ -1,0 +1,25 @@
+.navBarHome {
+ text-decoration: none;
+ border: 3px solid black;
+}
+
+.navBarLogin {
+ text-decoration: none;
+ border: 3px solid black;
+}
+
+.navBarSignUp {
+    text-decoration: none;
+    border: 3px solid black;
+
+}
+
+.navBarUsers {
+    text-decoration: none;
+    border: 3px solid black;
+}
+
+
+.navBar_ul {
+    list-style-type: none;
+}

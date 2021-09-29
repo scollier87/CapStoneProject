@@ -4,7 +4,7 @@ import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
 
 const LoginForm = () => {
-  const [errors, setErrors] = useState([]);
+  const [errors, setErrors] = useState({});
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const user = useSelector(state => state.session.user);
@@ -20,20 +20,53 @@ const LoginForm = () => {
 
   const updateEmail = (e) => {
     setEmail(e.target.value);
+    let temporaryErrors = {...errors}
+    let correctEmail = []
+    let splitEmail = email.split('')
+    for (let characters in splitEmail){
+      let character = splitEmail[characters]
+
+        if(character === "@"){
+          correctEmail.push(true)
+        }
+
+        if(character === '.'){
+          correctEmail.push(true)
+        }
+
+    }
+    if(correctEmail.length < 2){
+      temporaryErrors.email = 'Must be a valid email'
+      setErrors(temporaryErrors)
+    } else {
+      delete temporaryErrors.email
+      setErrors(temporaryErrors)
+    }
   };
 
   const updatePassword = (e) => {
     setPassword(e.target.value);
+    let temporaryErrors = {...errors}
+    if(e.target.value < 1) {
+      temporaryErrors.password = 'Must enter a password'
+      setErrors(temporaryErrors)
+    } else {
+      delete temporaryErrors.password
+      setErrors(temporaryErrors)
+    }
   };
 
+
   if (user) {
-    return <Redirect to='/' />;
+    return <Redirect to='/home' />;
   }
+
+  const currentErrors = Object.values(errors)
 
   return (
     <form onSubmit={onLogin}>
       <div>
-        {errors.map((error, ind) => (
+        {currentErrors.map((error, ind) => (
           <div key={ind}>{error}</div>
         ))}
       </div>

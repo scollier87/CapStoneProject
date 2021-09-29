@@ -1,44 +1,82 @@
-/* .eventList_outsideContainer{
-    border: 3px solid black;
-    height: 600px;
-    width: 400px;
-    flex-direction: column;
-} */
+.eventList_outsideContainer{
+    /* border: 3px solid black; */
+    height: 400px;
+    width: auto;
+    overflow: auto;
+}
 
 
 .eventList_insideContainer{
-    border: 3px solid black;
+    border-top: 3px solid black;
     display: flex;
+    align-items: center;
+    /* justify-content: space-evenly; */
 }
 
 .eventList_containerLabel{
+    /* border: 3px solid black; */
     display: flex;
     justify-content: center;
-    display: block;
-    margin: 0 auto;
+    align-items: center;
 }
-.booking_div{
+/* .bookin_div{
 border: 3px solid black;
+} */
+
+.booking_getKeys_Sitter{
+    margin-left: 11%;
+    text-align: center;
 }
 
-.booking_getKeys{
-    /* border: 3px solid black; */
-    height: 50px;
-    width: 200px;
-    /* display: block; */
-    /* margin: 0 auto; */
+.booking_getKeys_Parent{
+    margin-left:12%;
+    text-align: center;
+}
+
+.booking_getKeys_Time{
+    margin-left: 10%;
+    text-align: center;
+}
+
+.booking_getKeys_Children{
+    margin-left: 10%;
+    text-align: center;
+}
+
+.booking_getKeys_Description{
+    margin-left: 10%;
+    text-align: center;
+    height: 5%;
+    width: 10%;
+    overflow: auto;
+}
+
+.booking_getKeys_Cost{
+    margin-left: 10%;
+    text-align: center;
 }
 
 .deleteOneBooking{
     font-size:medium;
-    margin: 0 auto;
+    /* margin: 0 auto; */
     margin-top: 15px;
-    padding:10px;
+    /* padding:10px; */
     border-radius: 30px;
     background-color:pink;
     border: 8px solid lightblue;
     color:rgb(196, 69, 90);
     width: 100px;
     font-weight:lighter;
-    display: block;
+    margin-left: 5%;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    /* display: block; */
+}
+
+.labelContainer{
+    /* border: 3px solid black; */
+    height: 100px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
 }

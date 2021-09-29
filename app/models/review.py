@@ -6,7 +6,7 @@ class Review(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     owner_id = db.Column(db.Integer, ForeignKey('users.id'), nullable=False)
-    body = db.Column(db.String(250))
+    body = db.Column(db.String(250), nullable=False)
     created_at = db.Column(db.DateTime, nullable=True)
 
     owner = relationship("User", back_populates="reviews")
