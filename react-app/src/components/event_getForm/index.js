@@ -30,6 +30,7 @@ function GetAllEvents() {
                 {filteredEvents.map((event) => (
                     <>
                     <p className='event_getKeys'>Time of Event: {event.event_time}</p>
+                    <p className='event_getKeys'>Number of hours: {event.duration}</p>
                     <p className='event_getKeys'>Number of children: {event.how_many_kids}</p>
                     <p className='event_getKeys'>Description: {event.description}</p>
                     <p className='event_getKeys'>How much? ${event.cost}/hr</p>

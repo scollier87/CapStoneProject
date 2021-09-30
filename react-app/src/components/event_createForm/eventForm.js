@@ -14,6 +14,7 @@ function NewEventForm(){
     const sessionUser = useSelector(state => state.session.user);
 
     const [event_time, setEvent_time] = useState('')
+    const [duration, setDuration] = useState('')
     const [how_many_kids, setHow_many_kids] = useState('')
     const [description, setDescription] = useState('')
     const [cost, setCost] = useState('')
@@ -22,6 +23,18 @@ function NewEventForm(){
 
 
     const updateEvent_time = (e) => setEvent_time(e.target.value);
+
+    const updateDuration = (e) => {
+        setDuration(e.target.value);
+        let temporaryErrors = { ...errors }
+            if(e.target.value < 1 || e.target.value > 8) {
+                temporaryErrors.duration = 'minimum number of hours is 1 and maximum is 8'
+                setErrors(temporaryErrors)
+            } else {
+                delete temporaryErrors.duration
+                setErrors(temporaryErrors)
+            }
+    }
 
     const updateHow_many_kids = (e) =>{
         setHow_many_kids(e.target.value);
@@ -66,6 +79,7 @@ function NewEventForm(){
             const payload ={
                 owner_id : sessionUser.id,
                 event_time,
+                duration,
                 how_many_kids,
                 description,
                 cost,
@@ -95,10 +109,12 @@ function NewEventForm(){
             <form className='newEventFormContainer'>
                 <label className='event_formFields'>What time is the event Event?</label>
                 <input className='event_formInput' value={event_time} onChange={updateEvent_time} type='datetime-local' min="2021-09-29T08:30" required></input>
+                <label className='event_formFields'>How many hours?</label>
+                <input className='event_formInput' type='number' value={duration} onChange={updateDuration} min='1' max='8' required></input>
                 <label className='event_formFields'>How many children?(1-15)</label>
                 <input className='event_formInput' type='number' value={how_many_kids} onChange={updateHow_many_kids} min='1' max='15' required></input>
                 <label className='event_formFields'>Describe what needs to be done.(50-200 characters)</label>
-                <textarea className='event_forInputTextArea' type='text' value={description} onChange={updateDescription} minlength='50' maxlength='200'required></textarea>
+                <textarea className='event_forInputTextArea' type='text' value={description} onChange={updateDescription} minLength='50' maxLength='200'required></textarea>
                 <label className='event_formFields'>How much are you paying?</label>
                 <input className='event_formInput' type='number' value={cost} onChange={updateCost} min='15' max='200' required></input>
                 <button className='submitEvent_Button' type='submit' onClick={handleSubmit}>Submit</button>

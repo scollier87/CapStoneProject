@@ -11,6 +11,7 @@ class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     owner_id = db.Column(db.Integer, ForeignKey('users.id'), nullable=False)
     event_time = db.Column(db.DateTime, nullable=False)
+    duration = db.Column(db.Integer, nullable=False)
     how_many_kids = db.Column(db.Integer, nullable=False)
     description = db.Column(db.String(300), nullable=False)
     cost = db.Column(db.Integer, nullable=False)
@@ -25,6 +26,7 @@ class Event(db.Model):
             'id': self.id,
             'owner_id': self.owner_id,
             'event_time': self.event_time,
+            'duration': self.duration,
             'how_many_kids': self.how_many_kids,
             'description': self.description,
             'cost': self.cost,

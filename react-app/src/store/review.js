@@ -91,7 +91,7 @@ export const createOneUser = (payload) => async dispatch => {
     const response = await fetch(`/api/users`, {
         method: 'POST',
         headers: { "Content-Type": "application/json"},
-        body: JSON.stringify({parent_pic, email, first_name, last_name})
+        body: JSON.stringify({email, first_name, last_name})
     })
 
     let newUser

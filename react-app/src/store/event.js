@@ -39,6 +39,7 @@ export const createOneEvent = (payload) => async dispatch => {
     const {
         owner_id,
         event_time,
+        duration,
         how_many_kids,
         description,
         cost,
@@ -48,7 +49,7 @@ export const createOneEvent = (payload) => async dispatch => {
     const response = await fetch(`/api/events`, {
         method: 'POST',
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ owner_id, event_time, how_many_kids, description, cost, created_at })
+        body: JSON.stringify({ owner_id, event_time, duration, how_many_kids, description, cost, created_at })
     });
 
     let newEvent

@@ -21,6 +21,7 @@ def bookings():
             'id' : event.id,
             'owner_id' : event.owner.id,
             'event_time' : event.event_time,
+            'duration' : event.duration,
             'how_many_kids' : event.how_many_kids,
             'description' : event.description,
             'cost' : event.cost,

@@ -47,7 +47,8 @@
     color:rgb(196, 69, 90);
     width: 100px;
     font-weight:lighter;
-    display: block;
+    display: flex;
+    justify-content: center;
     margin-bottom: 100px;
     text-decoration: none;
 }

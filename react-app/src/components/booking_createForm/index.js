@@ -11,7 +11,7 @@ function NewBookingForm(){
     const {id} = useParams()
     const dispatch = useDispatch();
     const history = useHistory();
-    // const bookings = useSelector((state) => (state.bookings));
+    // const bookings = useSelector((state) => Object.values(state.bookings));
     // const booking = bookings.find(booking => booking.id === +id);
 
     const sessionUser = useSelector(state => state.session.user)
@@ -69,12 +69,12 @@ function NewBookingForm(){
             const booking = dispatch(createOneBooking(payload))
                 if(booking){
                     setTimeout(() => {
-                        history.push(`/bookingsuser`)
+                        history.push(`/home`)
                 }, 100)}
 
         }
     }
-
+    console.log(sessionUser.first_name)
     const currentErrors = Object.values(errors)
 
     return (
@@ -91,10 +91,10 @@ function NewBookingForm(){
             <form className='newBookingFormContainer'>
 
                 <label className='booking_formLabel'>First Name?</label>
-                <input className='booking_formInput' value={first_name} onChange={updateFirst_name} type='text' minlength="2" maxlength="12" size="12" required></input>
+                <input className='booking_formInput' defaultValue={sessionUser.first_name} onChange={updateFirst_name} type='text' minLength="2" maxLength="12" size="12" required></input>
 
                 <label className='booking_formLabel'>Last Name?</label>
-                <input className='booking_formInput' value={last_name} onChange={updateLast_name} type='text' minlength="2" maxlength="12" size="12" required></input>
+                <input className='booking_formInput' defaultValue={sessionUser.last_name} onChange={updateLast_name} type='text' minLength="2" maxLength="12" size="12" required></input>
 
                 <button className='submitBooking_Button' type='submit' onClick={handleSubmit}>Submit</button>
             </form>
