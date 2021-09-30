@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
 import { logout } from '../../store/session';
+import './LogOutButton.css'
 
 const LogoutButton = () => {
 
@@ -11,11 +12,11 @@ const LogoutButton = () => {
   const onLogout = async (e) => {
     await dispatch(logout());
     if(!sessionUser){
-      history.push('/login')
+      history.push('/')
     }
   };
 
-  return <button onClick={onLogout}>Logout</button>;
+  return <button className='LogOutButtonMain' onClick={onLogout}>Logout</button>;
 };
 
 export default LogoutButton;

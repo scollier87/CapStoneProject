@@ -1,0 +1,38 @@
+.submitButton_form{
+    /* border: 3px solid black; */
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.submitButton_formLabel{
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.submitButton_formInput{
+    border: 2px solid black;
+    height: 25px;
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+    border-radius: 15px;
+}
+
+.submitForm_signup{
+    font-size:medium;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding:10px;
+    border-radius: 30px;
+    background-color:lightblue;
+    border: 8px solid pink;
+    color:rgb(196, 69, 90);
+    width: 100px;
+    font-weight:lighter;
+    display: block;
+    text-decoration: none;
+}

@@ -29,8 +29,8 @@ function NewBookingForm(){
         setFirst_name(e.target.value);
         // console.log(first_name)
         let temporaryErrors = {...errors}
-        if(!first_name.length || first_name.length <= 1) {
-            temporaryErrors.first_name = 'First name can not be blank and must be more than 1 character.'
+        if(!first_name.length || first_name.length > 12) {
+            temporaryErrors.first_name = 'First name can not be blank (2-12 characters).'
             setErrors(temporaryErrors)
 
         }
@@ -44,8 +44,8 @@ function NewBookingForm(){
     const updateLast_name = (e) => {
         setLast_name(e.target.value);
         let temporaryErrors = {...errors}
-        if(!last_name.length || last_name <=1) {
-            temporaryErrors.last_name = 'Last name can not be black and must be more than 1 character.'
+        if(!last_name.length || last_name >12) {
+            temporaryErrors.last_name = 'Last name can not be blank (2-12 characters).'
             setErrors(temporaryErrors)
         }
         else{
@@ -56,7 +56,7 @@ function NewBookingForm(){
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(first_name.length > 1 && last_name.length > 1){
+        if(first_name.length > 2 && last_name.length < 12){
             const payload = {
                 owner_id : sessionUser.id,
                 event_id : +id,
@@ -91,10 +91,10 @@ function NewBookingForm(){
             <form className='newBookingFormContainer'>
 
                 <label className='booking_formLabel'>First Name?</label>
-                <input className='booking_formInput' value={first_name} onChange={updateFirst_name} type='text' required></input>
+                <input className='booking_formInput' value={first_name} onChange={updateFirst_name} type='text' minlength="2" maxlength="12" size="12" required></input>
 
                 <label className='booking_formLabel'>Last Name?</label>
-                <input className='booking_formInput'value={last_name} onChange={updateLast_name} type='text' required></input>
+                <input className='booking_formInput' value={last_name} onChange={updateLast_name} type='text' minlength="2" maxlength="12" size="12" required></input>
 
                 <button className='submitBooking_Button' type='submit' onClick={handleSubmit}>Submit</button>
             </form>

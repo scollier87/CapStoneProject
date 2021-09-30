@@ -1,9 +1,11 @@
 .hm_backgroundOuter{
-    border: 3px solid black;
-    height: 1000px;
-    width: 1200px;
-    justify-content: center;
-    display: table-row;
+    background-image: url('stars.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    /* border: 3px solid black; */
+    /* justify-content: center; */
+    height: 100vh;
+    display: absolute;
     top: 0;
     right: 0;
     left: 0;
@@ -11,7 +13,7 @@
 }
 
 .hm_myCreatedEventsContainer{
-    border: 3px solid black;
+    /* border: 3px solid black; */
     width: 400px;
     overflow: auto;
     position: fixed;
@@ -20,13 +22,33 @@
     left: 50px;
 }
 
+.hm_createEventButton{
+    font-size:medium;
+    margin-top: 15px;
+    padding:10px;
+    border-radius: 30px;
+    background-color:pink;
+    border: 8px solid lightblue;
+    color:rgb(18, 40,87);
+    width: 145px;
+    position: absolute;
+    font-weight:lighter;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    left: 77%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .hm_createdEvents{
     list-style-type: none;
     text-decoration: none;
+    /* background-color: white; */
+    /* border-radius: 30px; */
 }
 
 .hm_myCreatedBookingsContainer{
-    border:3px solid black;
+    /* border:3px solid black; */
     width: 400px;
     overflow: auto;
     position: fixed;
@@ -38,29 +60,117 @@
 .hm_createdBookings{
     list-style-type: none;
     text-decoration: none;
+    /* background-color: white; */
 }
 
 .hm_myBookingsButton{
-    border: 3px solid black;
+    font-size:medium;
+    margin: 0 auto;
+    margin-top: 15px;
+    padding:10px;
+    border-radius: 30px;
+    background-color:lightblue;
+    border: 8px solid pink;
+    color:rgb(196, 69, 90);
+    width: 125px;
+    font-weight:lighter;
+    display: block;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .hm_myEventsButton{
-    border: 3px solid black;
+    font-size:medium;
+    margin-top: 15px;
+    padding:10px;
+    border-radius: 30px;
+    background-color:lightblue;
+    border: 8px solid pink;
+    color:rgb(196, 69, 90);
+    width: 100px;
+    position: absolute;
+    font-weight:lighter;
     text-decoration: none;
+    display: flex;
+    justify-content: center;
+    left: 87%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .hm_bioDiv{
-    border: 3px solid black;
+    /* border: 3px solid black; */
     display: flex;
     justify-content: center;
     height: 300px;
     width: 700px;
     margin-left: 720px;
     margin-top: 200px;
+    background-color: white;
+}
+
+.tellMore{
+    background-color: white;
+    position: absolute;
+    right: 38.5%;
+    top: 15%;
+    color: crimson;
 }
 
 .hm_createdEventsBorder{
-    border: 3px solid black;
+    border: 3px solid lightpink;
     margin-bottom: 5%;
+    border-radius: 20px;
+    background-color: white;
+    padding-left: 7px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.hm_createBookingsBorder{
+    border: 3px solid lightblue;
+    margin-bottom: 5%;
+    border-radius: 20px;
+    background-color: white;
+    padding-left: 7px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.hm_images{
+    /* border: 2px solid black; */
+    width: 50%;
+    height: 300px;
+    right: 25%;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.hm_imagesDiv{
+    border: 3px solid blue;
+    height: 400px;
+    width: 275px;
+    background-image: url(https://babysittingneeds.s3.us-west-1.amazonaws.com/Screen+Shot+2021-09-21+at+8.07.22+PM.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    /* display: flex;
+    flex-direction: column; */
+}
+
+.hm_imagesDiv1{
+    border: 3px solid palevioletred;
+    height: 400px;
+    width: 350px;
+    background-image: url(https://babysittingneeds.s3.us-west-1.amazonaws.com/Screen+Shot+2021-09-21+at+8.06.59+PM.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 12px;
 }

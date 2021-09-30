@@ -40,9 +40,9 @@ function App() {
           <NavBar/>
           <LoginForm />
         </Route>
-        <Route path='/sign-up' exact={true}>
+        {/* <Route path='/sign-up' exact={true}>
           <SignUpForm />
-        </Route>
+        </Route> */}
         <ProtectedRoute path='/users' exact={true} >
           <UsersList/>
         </ProtectedRoute>
@@ -50,7 +50,7 @@ function App() {
           <User />
         </ProtectedRoute>
         <Route path='/' exact={true} >
-          <h1>Splash</h1>
+          {/* <SignUpForm/> */}
           <SplashPage/>
         </Route>
         <ProtectedRoute path='/events' exact={true}>
