@@ -2,7 +2,7 @@
     background-image: url('stars.jpg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    /* border: 3px solid black; */
+    border: .5px solid transparent;
     /* justify-content: center; */
     height: 100vh;
     display: absolute;
@@ -12,14 +12,29 @@
     bottom: 0;
 }
 
+.CurrentEventsTag{
+    position: absolute;
+    margin-top: 5%;
+    margin-left: 7%;
+}
+
+.babysittingEventsTag{
+    background-color: white;
+    position: absolute;
+    top:11%;
+    left: 80%;
+}
+
 .hm_myCreatedEventsContainer{
-    /* border: 3px solid black; */
+    border: 3px solid lightblue;
     width: 400px;
     overflow: auto;
     position: fixed;
-    top: 200px;
-    bottom: 500px;
+    top: 175px;
+    bottom: 100px;
     left: 50px;
+    border-radius: 25px;
+    padding: 1%;
 }
 
 .hm_createEventButton{
@@ -48,13 +63,15 @@
 }
 
 .hm_myCreatedBookingsContainer{
-    /* border:3px solid black; */
+    border:3px solid lightpink;
     width: 400px;
     overflow: auto;
     position: fixed;
     top: 200px;
     bottom: 500px;
     right: 50px;
+    border-radius: 25px;
+    padding: 1%;
 }
 
 .hm_createdBookings{
@@ -103,7 +120,7 @@
     /* border: 3px solid black; */
     display: flex;
     justify-content: center;
-    height: 300px;
+    height: 140px;
     width: 700px;
     margin-left: 720px;
     margin-top: 200px;
@@ -113,8 +130,8 @@
 .tellMore{
     background-color: white;
     position: absolute;
-    right: 38.5%;
-    top: 15%;
+    right: 40%;
+    top: 13%;
     color: crimson;
 }
 
