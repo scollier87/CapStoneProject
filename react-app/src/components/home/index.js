@@ -40,7 +40,7 @@ function Home() {
     return (
         <div className='hm_backgroundOuter'>
             <>
-            <LogoutButton to='/login'/>
+            <LogoutButton/>
             <div className='hm_header'>
                 <Link to={`./eventsuser`} className='hm_myEventsButton'>My Events</Link>
             </div>
@@ -48,7 +48,7 @@ function Home() {
                 <Link to={`./events`} className='hm_createEventButton'>Create an Event</Link>
             </div>
             <div>
-                <Link to={'/'} className='hm_spl'>Front Page</Link>
+                <Link to={'./'} className='hm_spl'>Front Page</Link>
             </div>
             <div className='hm_myCreatedEventsContainer'>
                 <div>
@@ -63,13 +63,17 @@ function Home() {
                     )}
                 </div>
             </div>
+                <h1 className='tellMore'>Tell us about yourself and your children</h1>
             <div className='hm_bioDiv'>
-                <h1>Small Bio</h1>
+                <h1>Hello Everyone, I am looking for a babysitter for at least once a week for a couple hours session.
+                    I have three amazing babies. Addison who is three years old, James who is 2 years old and Charlotte who
+                    is 9 months of age. Any help would be greatly appreciated!
+                </h1>
             </div>
             <div className='hm_myCreatedBookingsContainer'>
                 <div>
                     {filteredBookings.map((booking) =>
-                        <div>
+                        <div className='hm_createBookingsBorder'>
                             <li className='hm_createdBookings'>Who Created the event: {`${fetchUserTable(booking?.events[0]?.owner_id)?.first_name} ${fetchUserTable(booking?.events[0]?.owner_id)?.last_name}`}</li>
                             <li className='hm_createdBookings'>Time of Event: {booking?.events[0]?.event_time}</li>
                             <li className='hm_createdBookings'>Event Cost: ${booking?.events[0]?.cost}/hr</li>
@@ -78,7 +82,10 @@ function Home() {
                     )}
                     <Link to={`/bookingsuser`} className='hm_myBookingsButton'>My Bookings</Link>
                 </div>
-
+            </div>
+            <div className='hm_images'>
+                <div className='hm_imagesDiv'></div>
+                <div className='hm_imagesDiv1'>Images1</div>
             </div>
             </>
         </div>

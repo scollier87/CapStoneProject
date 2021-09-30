@@ -1,19 +1,31 @@
 
 
 .spl_container{
+    background-image: url(gradient-1291455_1280.jpeg);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     border: 3px solid black;
-    height: 1120px;
     width: auto;
 }
 
 .spl_containerLeft{
     border: 3px solid black;
     margin-top: 100px;
-    margin-left: 175px;
+    margin-left: 375px;
     height: 500px;
-    width: 800px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    border-radius: 12px;
 }
 
+.h3_tag{
+    display: flex;
+    justify-content: center;
+}
 .spl_containerLeftImg{
 
 }
@@ -21,27 +33,112 @@
 .spl_containerRight{
     border: 3px solid black;
     margin-top: -500px;
-    margin-left: 1125px;
+    margin-left: 1325px;
     height: 500px;
-    width: 800px;
+    width: 400px;
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    border-radius: 12px;
+}
+
+.h3_tags{
+    display: flex;
+    justify-content: center;
 }
 
 .spl_containerRightImg{
-
+    /* display: flex;
+    align-items: center; */
 }
 
 .spl_Footer{
-    border: 3px solid black;
+    /* border: 3px solid black; */
     width: 1800px;
     height: 100px;
     margin-top: 25px;
     margin-left: 150px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
 }
 
 .spl_newsFeed{
-    border: 3px solid black;
+    /* border: 3px solid black; */
     height: 300px;
     width: 1800px;
     margin-left: 150px;
     margin-top: 50px;
+    display: flex;
+    /* justify-content: space-evenly; */
+    align-items: center;
+    flex-direction: column;
+}
+
+.newsFeedDiv_Container{
+    /* border: 3px solid black; */
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.bunchOfh3s{
+    display: flex;
+    justify-content: space-evenly;
+    width: 105%;
+}
+
+.spl_newsFeedDiv1{
+    border: 3px solid lightcoral;
+    height: 250px;
+    width: 250px;
+    background-image: url('small-baby-blk.jpeg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+}
+
+.spl_newsFeedDiv2{
+    border: 3px solid navy;
+    height: 250px;
+    width: 250px;
+    background-image: url('toddler-boy-yellow-shirt-300px.jpeg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+}
+
+.spl_newsFeedDiv3{
+    border: 3px solid lightcoral;
+    height: 250px;
+    width: 250px;
+    background-image: url('toddler-girl-pig-tails-300px.jpeg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+}
+
+.spl_newsFeedDiv{
+    border: 3px solid black;
+    height: 250px;
+    width: 250px;
+}
+/* .spl_About{
+    border: 3px solid black;
+    display: table-column;
+    justify-content: center;
+} */
+
+.canva{
+    /* border: 3px solid black; */
+    height: 500px;
+    width: 500px;
+    position: absolute;
+    top: 9%;
+    right: 39%;
+    background-image: url('Baby Sitting Needs (1).png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }

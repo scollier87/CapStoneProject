@@ -29,8 +29,8 @@ function UpdateEventForm(){
     const updateHow_many_kids = (e) =>{
          setHow_many_kids(e.target.value);
         let temporaryErrors = { ...errors }
-            if(e.target.value < 1) {
-                temporaryErrors.how_many_kids = 'Please enter a number of children greater than 0'
+            if(e.target.value < 1 || e.target.value > 15) {
+                temporaryErrors.how_many_kids = 'Please enter the number of children (1-15)'
                 setErrors(temporaryErrors)
             } else {
                 delete temporaryErrors.how_many_kids
@@ -41,8 +41,8 @@ function UpdateEventForm(){
     const updateDescription = (e) => {
         setDescription(e.target.value);
         let temporaryErrors = {...errors}
-        if(e.target.value === '' || e.target.value === ' ')  {
-            temporaryErrors.description = 'Must enter a description of event.'
+        if(e.target.value < 50 || e.target.value > 200)  {
+            temporaryErrors.description = 'Description must be between 50-200 characters.'
             setErrors(temporaryErrors)
         } else {
             delete temporaryErrors.description
@@ -54,8 +54,8 @@ function UpdateEventForm(){
     const updateCost = (e) => {
         setCost(e.target.value);
         let temporaryErrors = {...errors}
-        if(e.target.value < 1) {
-            temporaryErrors.cost = `Must enter a number greater than 0, no '$' required`
+        if(e.target.value < 15 || e.target.value > 200) {
+            temporaryErrors.cost = `Choose an amount (50-200), no '$' required`
             setErrors(temporaryErrors)
         } else {
             delete temporaryErrors.cost
@@ -106,11 +106,11 @@ function UpdateEventForm(){
                         <label className='event_updateLabel'>What time?</label>
                         <input className='event_updatedInput' value={event_time} defaultValue={events?.event_time} onChange={updateEvent_time} type='datetime-local' min="2021-09-29T08:30" required></input>
                         <label className='event_updateLabel'>How many kids?</label>
-                        <input className='event_updatedInput' value={how_many_kids} defaultValue={events?.how_many_kids} onChange={updateHow_many_kids} required></input>
-                        <label className='event_updateLabel'>Description</label>
-                        <textarea className='event_updatedTextarea' value={description} defaultValue={events?.description} onChange={updateDescription} required></textarea>
+                        <input className='event_updatedInput' type='number' value={how_many_kids} defaultValue={events?.how_many_kids} onChange={updateHow_many_kids} min='1' max='15' required></input>
+                        <label className='event_updateLabel'>Describe what needs to be done.(50-200 characters)</label>
+                        <textarea className='event_updatedTextarea' type='text' value={description} defaultValue={events?.description} onChange={updateDescription} minlength='50' maxlength='200' required></textarea>
                         <label className='event_updateLabel'>How much are you paying?</label>
-                        <input className='event_updatedInput' value={cost} defaultValue={events?.cost} onChange={updateCost} required></input>
+                        <input className='event_updatedInput' type='number' value={cost} defaultValue={events?.cost} onChange={updateCost} min='15' max='200' required></input>
 
                         <a className='eventButtonUpdate' href='/eventsupdate'><button className='actual_eventUpdateBtn' type='submit'>Update</button></a>
                     </div>

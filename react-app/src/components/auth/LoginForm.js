@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { login } from '../../store/session';
+import './LoginForm.css'
 
 const LoginForm = () => {
   const [errors, setErrors] = useState({});
@@ -56,6 +57,12 @@ const LoginForm = () => {
     }
   };
 
+  const demoUserLogin = () => {
+    const data = dispatch(login('demo@aa.io', 'password'));
+    if (data) {
+      setErrors(data)
+    }
+  }
 
   if (user) {
     return <Redirect to='/home' />;
@@ -64,6 +71,7 @@ const LoginForm = () => {
   const currentErrors = Object.values(errors)
 
   return (
+    <div className='loginButton_form'>
     <form onSubmit={onLogin}>
       <div>
         {currentErrors.map((error, ind) => (
@@ -71,8 +79,9 @@ const LoginForm = () => {
         ))}
       </div>
       <div>
-        <label htmlFor='email'>Email</label>
+        <label className='loginButton_formLabel' htmlFor='email'>Email</label>
         <input
+          className='loginButton_formInput'
           name='email'
           type='text'
           placeholder='Email'
@@ -81,17 +90,20 @@ const LoginForm = () => {
         />
       </div>
       <div>
-        <label htmlFor='password'>Password</label>
+        <label className='loginButton_formLabel' htmlFor='password'>Password</label>
         <input
+          className='loginButton_formInput'
           name='password'
           type='password'
           placeholder='Password'
           value={password}
           onChange={updatePassword}
         />
-        <button type='submit'>Login</button>
+        <button className='LoginButton_formBtn' type='submit'>Login</button>
       </div>
+      <div className='demoBtn'><a onClick={demoUserLogin}>Demo User</a></div>
     </form>
+    </div>
   );
 };
 
