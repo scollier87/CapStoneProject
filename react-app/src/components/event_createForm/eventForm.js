@@ -108,7 +108,7 @@ function NewEventForm(){
             </ul>
             <form className='newEventFormContainer'>
                 <label className='event_formFields'>What time is the event Event?</label>
-                <input className='event_formInput' value={event_time} onChange={updateEvent_time} type='datetime-local' min="2021-09-29T08:30" required></input>
+                <input className='event_formInput' value={event_time} onChange={updateEvent_time} type='datetime-local' min="2021-09-30T08:30" required></input>
                 <label className='event_formFields'>How many hours?</label>
                 <input className='event_formInput' type='number' value={duration} onChange={updateDuration} min='1' max='8' required></input>
                 <label className='event_formFields'>How many children?(1-15)</label>

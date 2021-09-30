@@ -40,7 +40,7 @@ function Home() {
     }
 
     const filteredEvents = events.filter((event) => event.owner_id !== sessionUser?.id);
-    const filteredBookings = bookings.filter(booking => booking.owner_id === sessionUser?.id)
+    // const filteredBookings = bookings.filter(booking => booking.owner_id !== sessionUser?.id)
 
     let wages = (hourlyRate, lengthOfEvent) => {
         return (hourlyRate * lengthOfEvent)
@@ -56,12 +56,10 @@ function Home() {
             <div >
                 <Link to={`./events`} className='hm_createEventButton'>Create an Event</Link>
             </div>
-            <div>
-                <a href={'/'} className='hm_spl'>Front Page</a>
-            </div>
+            <h1 className='CurrentEventsTag'>Current Events</h1>
             <div className='hm_myCreatedEventsContainer'>
                 <div>
-                    <div>Current Events
+                    <div>
                     {filteredEvents.map((event) =>
                         <div className='hm_createdEventsBorder'>
                             <li className='hm_createdEvents'><strong>Time of Event:</strong> {event.event_time}</li>
@@ -76,24 +74,25 @@ function Home() {
                     </div>
                 </div>
             </div>
-                <h1 className='tellMore'>Tell us about yourself and your children</h1>
+                <h1 className='tellMore'>Welcome to Babysitting Needs {sessionUser.first_name}</h1>
             <div className='hm_bioDiv'>
-                <h1>Hello Everyone, I am looking for a babysitter for at least once a week for a couple hours session.
-                    I have three amazing babies. Addison who is three years old, James who is 2 years old and Charlotte who
-                    is 9 months of age. Any help would be greatly appreciated!
+                <h1>Hello Everyone, if you are a parent, start creating your
+                    events. If you are a babysitter, start booking and making
+                    money. Or do both!
                 </h1>
             </div>
+            <h1 className='babysittingEventsTag'>My Babysitting Events</h1>
             <div className='hm_myCreatedBookingsContainer'>
                 <div>
-                    <div>My Babysitting Events
-                    {filteredBookings.map((booking) =>
+                    <div>
+                    {bookings.map((booking) =>
                         <div className='hm_createBookingsBorder'>
                             <li className='hm_createdBookings'><strong>Parent:</strong> {`${fetchUserTable(booking?.events[0]?.owner_id)?.first_name} ${fetchUserTable(booking?.events[0]?.owner_id)?.last_name}`}</li>
                             <li className='hm_createdBookings'><strong>Babysitter:</strong> {booking?.first_name} {booking?.last_name} </li>
                             <li className='hm_createdBookings'><strong>Time of Event:</strong> {booking?.events[0]?.event_time}</li>
                             <li className='hm_createdBookings'><strong>I am being paid</strong> ${wages(booking?.events[0]?.cost, booking?.events[0]?.duration)}</li>
                             <li className='hm_createdBookings'></li>
-                            <button className='faviconTrash' onClick={()=>handleDelete(booking?.id)}><img src="https://img.icons8.com/small/16/000000/trash--v1.png"/></button>
+                            {sessionUser?.id === booking?.owner_id && <button className='faviconTrash' onClick={()=>handleDelete(booking?.id)}><img src="https://img.icons8.com/small/16/000000/trash--v1.png"/></button>}
                         </div>
                     )}
                     </div>
