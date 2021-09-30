@@ -74,14 +74,14 @@ function Home() {
                     </div>
                 </div>
             </div>
-                <h1 className='tellMore'>Welcome to Babysitting Needs {sessionUser.first_name}</h1>
+                <h1 className='tellMore'>Welcome to Babysitting Needs! {sessionUser.first_name}</h1>
             <div className='hm_bioDiv'>
                 <h1>Hello Everyone, if you are a parent, start creating your
                     events. If you are a babysitter, start booking and making
                     money. Or do both!
                 </h1>
             </div>
-            <h1 className='babysittingEventsTag'>My Babysitting Events</h1>
+            <h1 className='babysittingEventsTag'>Babysitting Events</h1>
             <div className='hm_myCreatedBookingsContainer'>
                 <div>
                     <div>
