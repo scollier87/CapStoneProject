@@ -17,6 +17,7 @@ def events():
         'id' : event.id,
         'owner_id' : event.owner.id,
         'event_time' : event.event_time,
+        'duration' :event.duration,
         'how_many_kids' : event.how_many_kids,
         'description' : event.description,
         'cost' : event.cost,
@@ -37,6 +38,7 @@ def new_event():
     event = Event (
         owner_id=int(request.json['owner_id']),
         event_time=request.json['event_time'],
+        duration=request.json['duration'],
         how_many_kids=request.json['how_many_kids'],
         description=request.json['description'],
         cost=request.json['cost'],
@@ -51,6 +53,7 @@ def new_event():
 def edit_event(id):
     event = Event.query.get(id)
     event.event_time=request.json['event_time']
+    event.duration=request.json['duration']
     event.how_many_kids=request.json['how_many_kids']
     event.description=request.json['description']
     event.cost=request.json['cost']

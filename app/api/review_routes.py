@@ -16,7 +16,6 @@ def reviews():
         'created_at': review.created_at,
         'users' : [ {
             'id' : user.id,
-            'parent_pic' : user.parent_pic,
             'email': user.email,
             'first_name': user.first_name,
             'last_name': user.last_name,

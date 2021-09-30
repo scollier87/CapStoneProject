@@ -174,3 +174,11 @@
     background-repeat: no-repeat;
     border-radius: 12px;
 }
+
+.faviconTrash{
+    background-color: transparent;
+    border: none;
+    display: flex;
+    margin-left: 90%;
+
+}

@@ -1,7 +1,7 @@
 """table8
 
 Revision ID: 00c60bcd6359
-Revises: 
+Revises:
 Create Date: 2021-09-21 23:45:24.967365
 
 """
@@ -32,6 +32,7 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('owner_id', sa.Integer(), nullable=False),
     sa.Column('event_time', sa.DateTime(), nullable=True),
+    sa.Column('duration', sa.Integer(), nullable=False),
     sa.Column('how_many_kids', sa.Integer(), nullable=True),
     sa.Column('description', sa.String(length=300), nullable=True),
     sa.Column('cost', sa.Integer(), nullable=True),

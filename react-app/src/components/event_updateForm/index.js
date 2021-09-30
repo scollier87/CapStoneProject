@@ -17,6 +17,7 @@ function UpdateEventForm(){
     const events = useSelector((state) => Object.values(state.event));
 
     const [event_time, setEvent_time] = useState('')
+    const [duration, setDuration] = useState('')
     const [how_many_kids, setHow_many_kids] = useState(0)
     const [description, setDescription] = useState('')
     const [cost, setCost] = useState('')
@@ -24,7 +25,17 @@ function UpdateEventForm(){
 
     const updateEvent_time = (e) => setEvent_time(e.target.value);
 
-
+    const updateDuration = (e) => {
+        setDuration(e.target.value);
+        let temporaryErrors = { ...errors }
+            if(e.target.value < 1 || e.target.value > 8) {
+                temporaryErrors.duration = 'minimum number of hours is 1 and maximum is 8'
+                setErrors(temporaryErrors)
+            } else {
+                delete temporaryErrors.duration
+                setErrors(temporaryErrors)
+            }
+    }
 
     const updateHow_many_kids = (e) =>{
          setHow_many_kids(e.target.value);
@@ -70,6 +81,7 @@ function UpdateEventForm(){
             id : +id,
             owner_id : sessionUser?.id,
             event_time,
+            duration,
             how_many_kids,
             description,
             cost,
@@ -104,13 +116,15 @@ function UpdateEventForm(){
                     <div className='updateEvent_form'>
                     <h1 className='event_containerupdateLabel'>Update Event</h1>
                         <label className='event_updateLabel'>What time?</label>
-                        <input className='event_updatedInput' value={event_time} defaultValue={events?.event_time} onChange={updateEvent_time} type='datetime-local' min="2021-09-29T08:30" required></input>
+                        <input className='event_updatedInput' value={event_time} onChange={updateEvent_time} type='datetime-local' min="2021-09-29T08:30" required></input>
+                        <label className='event_formFields'>How many hours?</label>
+                <input className='event_formInput' type='number' value={duration} onChange={updateDuration} min='1' max='8' required></input>
                         <label className='event_updateLabel'>How many kids?</label>
-                        <input className='event_updatedInput' type='number' value={how_many_kids} defaultValue={events?.how_many_kids} onChange={updateHow_many_kids} min='1' max='15' required></input>
+                        <input className='event_updatedInput' type='number' value={how_many_kids} onChange={updateHow_many_kids} min='1' max='15' required></input>
                         <label className='event_updateLabel'>Describe what needs to be done.(50-200 characters)</label>
-                        <textarea className='event_updatedTextarea' type='text' value={description} defaultValue={events?.description} onChange={updateDescription} minlength='50' maxlength='200' required></textarea>
+                        <textarea className='event_updatedTextarea' type='text' value={description} onChange={updateDescription} minlength='50' maxlength='200' required></textarea>
                         <label className='event_updateLabel'>How much are you paying?</label>
-                        <input className='event_updatedInput' type='number' value={cost} defaultValue={events?.cost} onChange={updateCost} min='15' max='200' required></input>
+                        <input className='event_updatedInput' type='number' value={cost} onChange={updateCost} min='15' max='200' required></input>
 
                         <a className='eventButtonUpdate' href='/eventsupdate'><button className='actual_eventUpdateBtn' type='submit'>Update</button></a>
                     </div>
