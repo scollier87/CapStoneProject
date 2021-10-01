@@ -1,20 +1,56 @@
+.eventList_background{
+    background-image: url('pinknblue.jpeg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: .5px solid transparent;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
+.getEventsContainerDivs{
+    margin-top: 700px;
+}
+
 .eventList_container{
     /* border: 3px solid black; */
-    height: 600px;
-    width: auto;
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
     flex-direction: column;
+    align-items: center;
+    background-color: transparent;
     /* background-color: lightblue; */
     /* border-radius: 20px; */
-    height: max-content;
-    padding-top: 25px;
+    padding-top: 20px;
     text-align: center;
     font-weight: bold;
     font-size: larger;
-    background-color: lightblue;
+    /* background-color: lightblue; */
     color: palevioletred;
-    border-radius: 20px;
+    /* border-radius: 20px; */
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    overflow-y: scroll;
 }
 
+.getEventsContainer{
+    border: black 3px solid;
+    height: auto;
+    width: fit-content;
+    margin-bottom: 4%;
+    background-color: white;
+    border-radius: 20px;
+    padding: 15px;
+    /* overflow-y: scroll; */
+}
 .eventList_containerLabel {
     display: flex;
     justify-content: center;
@@ -24,6 +60,7 @@
     height: 100px;
     width: 525px;
     background-color: transparent;
+    margin-bottom: 8%;
     /* padding-top: 5px; */
 }
 
@@ -34,7 +71,7 @@
     width: 525px;
     display: block;
     margin: 0 auto;
-    padding-bottom: 10px;
+    padding-top: 4%;
 }
 
 .deleteOneEvent{
@@ -57,8 +94,8 @@
     margin-top: 15px;
     padding:10px;
     border-radius: 30px;
-    background-color:pink;
-    border: 8px solid lightblue;
+    background-color:lightblue;
+    border: 8px solid pink;
     color:blue;
     width: 100px;
     font-weight:lighter;
@@ -72,8 +109,8 @@
     margin-top: 15px;
     padding:10px;
     border-radius: 30px;
-    background-color:pink;
-    border: 8px solid lightblue;
+    background-color:lightblue;
+    border: 8px solid pink;
     color:blue;
     width: 100px;
     font-weight:lighter;
@@ -82,9 +119,11 @@
 }
 
 .event_GetButtons{
+    /* border: 3px black solid; */
     display: flex;
     justify-content: space-evenly;
     width: 525px;
-    margin-left: 820px;
+    /* margin-left: 820px; */
     padding-bottom: 45px;
+    margin-bottom: 25px;
 }

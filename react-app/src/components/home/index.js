@@ -12,7 +12,7 @@ function Home() {
     const sessionUser = useSelector(state => state.session.user)
     const events = useSelector((state) => Object.values(state.event))
     // const event = useSelector((state) => Object.values(state.events))
-    const bookings = useSelector((state) => Object.values(state.booking))
+    const bookings = useSelector((state) => Object.values(state?.booking))
     const [users, setUsers] = useState([]);
 
     useEffect(() => {
@@ -62,11 +62,12 @@ function Home() {
                     <div>
                     {filteredEvents.map((event) =>
                         <div className='hm_createdEventsBorder'>
+                            <li className='hm_createdEvents'><strong>Parent:</strong>{`${fetchUserTable(event?.owner_id)?.first_name} ${fetchUserTable(event?.owner_id)?.last_name}`}</li>
                             <li className='hm_createdEvents'><strong>Time of Event:</strong> {event.event_time}</li>
-                            <li className='hm_createdEvents'>How many hours: {event.duration}</li>
-                            <li className='hm_createdEvents'>Number of Children: {event.how_many_kids}</li>
-                            <li className='hm_createdEvents'>Description: {event.description}</li>
-                            <li className='hm_createdEvents'>How much? ${event.cost}/hr</li>
+                            <li className='hm_createdEvents'><strong>How many hours:</strong> {event.duration}</li>
+                            <li className='hm_createdEvents'><strong>Number of Children:</strong>{event.how_many_kids}</li>
+                            <li className='hm_createdEvents'><strong>Description:</strong>{event.description}</li>
+                            <li className='hm_createdEvents'><strong>How much? ${event.cost}/hr</strong></li>
                             <a className="bookEvent_button" href={`/bookings/${event.id}`}> Book Event? </a>
                             {/* <button className="bookEvent_button" onClick={() =>handleSubmit(event?.id)}> Book Event? </button> */}
                         </div>
@@ -74,7 +75,7 @@ function Home() {
                     </div>
                 </div>
             </div>
-                <h1 className='tellMore'>Welcome to Babysitting Needs! {sessionUser.first_name}</h1>
+                <h1 className='tellMore'>Welcome to Baby Sitting Needs {sessionUser.first_name}!</h1>
             <div className='hm_bioDiv'>
                 <h1>Hello Everyone, if you are a parent, start creating your
                     events. If you are a babysitter, start booking and making
@@ -90,9 +91,9 @@ function Home() {
                             <li className='hm_createdBookings'><strong>Parent:</strong> {`${fetchUserTable(booking?.events[0]?.owner_id)?.first_name} ${fetchUserTable(booking?.events[0]?.owner_id)?.last_name}`}</li>
                             <li className='hm_createdBookings'><strong>Babysitter:</strong> {booking?.first_name} {booking?.last_name} </li>
                             <li className='hm_createdBookings'><strong>Time of Event:</strong> {booking?.events[0]?.event_time}</li>
-                            <li className='hm_createdBookings'><strong>I am being paid</strong> ${wages(booking?.events[0]?.cost, booking?.events[0]?.duration)}</li>
+                            <li className='hm_createdBookings'><strong>{booking?.first_name} is being paid ${wages(booking?.events[0]?.cost, booking?.events[0]?.duration)}.</strong> </li>
                             <li className='hm_createdBookings'></li>
-                            {sessionUser?.id === booking?.owner_id && <button className='faviconTrash' onClick={()=>handleDelete(booking?.id)}><img src="https://img.icons8.com/small/16/000000/trash--v1.png"/></button>}
+                            {sessionUser?.id === booking?.owner_id && <button className='faviconTrash' onClick={()=>handleDelete(booking?.id)}><img src="https://img.icons8.com/color/48/000000/recycle-bin.png"/></button>}
                         </div>
                     )}
                     </div>

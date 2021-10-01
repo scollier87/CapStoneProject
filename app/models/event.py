@@ -19,7 +19,7 @@ class Event(db.Model):
 
 
     owner = relationship("User", back_populates="events")
-    bookings = relationship("Booking", back_populates="event")
+    bookings = relationship("Booking", back_populates="event", cascade='all, delete')
 
     def to_dict(self):
         return {
