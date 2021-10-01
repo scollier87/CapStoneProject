@@ -16,11 +16,13 @@ function UpdateEventForm(){
     // const events = events.find(event => event.id === +id);
     const events = useSelector((state) => Object.values(state.event));
 
-    const [event_time, setEvent_time] = useState('')
-    const [duration, setDuration] = useState('')
-    const [how_many_kids, setHow_many_kids] = useState(0)
-    const [description, setDescription] = useState('')
-    const [cost, setCost] = useState('')
+    const filteredEvents = events.filter((event) => event.id === +id)
+
+    const [event_time, setEvent_time] = useState(filteredEvents[0]?.event_time)
+    const [duration, setDuration] = useState(filteredEvents[0]?.duration)
+    const [how_many_kids, setHow_many_kids] = useState(filteredEvents[0]?.how_many_kids)
+    const [description, setDescription] = useState(filteredEvents[0]?.description)
+    const [cost, setCost] = useState(filteredEvents[0]?.cost)
     const [errors, setErrors] = useState({})
 
     const updateEvent_time = (e) => setEvent_time(e.target.value);
@@ -97,38 +99,32 @@ function UpdateEventForm(){
             dispatch(getEvents())
         }, [dispatch])
 
-        const filteredEvents = events.filter((event) => event.owner_id === sessionUser?.id)
-
         const currentErrors = Object.values(errors)
 
         return(
             <div className='updateEvent_container'>
+                <Link className='updatedEvent_HmBtn' to={`/home`} >Home</Link>
                 <LogoutButton/>
-                <Link to={`/home`} className='hm_myEventsButton'>Home</Link>
-                <ul>
-                {currentErrors.map((errors) => (
-                    <li>
-                        {errors}
-                    </li>
-                ))}
-                </ul>
-                <form onSubmit={handleSubmit}>
-                    <div className='updateEvent_form'>
-                    <h1 className='event_containerupdateLabel'>Update Event</h1>
+
+                <form className='updateEvent_form' onSubmit={handleSubmit}>
+                        <ul>
+                        {currentErrors.map((errors) => (
+                            <li>
+                                {errors}
+                            </li>
+                        ))}
+                        </ul>
                         <label className='event_updateLabel'>What time?</label>
-                        <input className='event_updatedInput' value={event_time} onChange={updateEvent_time} type='datetime-local' min="2021-09-29T08:30" required></input>
+                        <input className='event_updatedInput' defaultValue={event_time} onChange={updateEvent_time} type='datetime-local' min="2021-10-01T08:30" required></input>
                         <label className='event_formFields'>How many hours?</label>
-                <input className='event_formInput' type='number' value={duration} onChange={updateDuration} min='1' max='8' required></input>
+                        <input className='event_formInput' type='number' value={duration} onChange={updateDuration} min='1' max='8' required></input>
                         <label className='event_updateLabel'>How many kids?</label>
                         <input className='event_updatedInput' type='number' value={how_many_kids} onChange={updateHow_many_kids} min='1' max='15' required></input>
                         <label className='event_updateLabel'>Describe what needs to be done.(50-200 characters)</label>
                         <textarea className='event_updatedTextarea' type='text' value={description} onChange={updateDescription} minlength='50' maxlength='200' required></textarea>
                         <label className='event_updateLabel'>How much are you paying?</label>
                         <input className='event_updatedInput' type='number' value={cost} onChange={updateCost} min='15' max='200' required></input>
-
                         <a className='eventButtonUpdate' href='/eventsupdate'><button className='actual_eventUpdateBtn' type='submit'>Update</button></a>
-                    </div>
-
                 </form>
             </div>
         )

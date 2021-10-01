@@ -96,19 +96,20 @@ function NewEventForm(){
     const currentErrors = Object.values(errors)
 
     return(
-        <div>
-            <Link to={`./home`} className='eventList_HomeBtn'>Home</Link>
+        <div className='event_createFormBackground'>
+            <Link className='eventList_HomeBtn' to={`./home`} >Home</Link>
             <LogoutButton/>
-            <ul>
+
+            <form className='newEventFormContainer' onSubmit={handleSubmit}>
+                <ul>
                 {currentErrors.map((errors) => (
                     <li>
                         {errors}
                     </li>
-                ))}
-            </ul>
-            <form className='newEventFormContainer'>
+                    ))}
+                </ul>
                 <label className='event_formFields'>What time is the event Event?</label>
-                <input className='event_formInput' value={event_time} onChange={updateEvent_time} type='datetime-local' min="2021-09-30T08:30" required></input>
+                <input className='event_formInput' Defaultvalue={event_time} onChange={updateEvent_time} type='datetime-local' min={"2021-10-01T08:30"} required></input>
                 <label className='event_formFields'>How many hours?</label>
                 <input className='event_formInput' type='number' value={duration} onChange={updateDuration} min='1' max='8' required></input>
                 <label className='event_formFields'>How many children?(1-15)</label>
@@ -117,7 +118,7 @@ function NewEventForm(){
                 <textarea className='event_forInputTextArea' type='text' value={description} onChange={updateDescription} minLength='50' maxLength='200'required></textarea>
                 <label className='event_formFields'>How much are you paying?</label>
                 <input className='event_formInput' type='number' value={cost} onChange={updateCost} min='15' max='200' required></input>
-                <button className='submitEvent_Button' type='submit' onClick={handleSubmit}>Submit</button>
+                <button className='submitEvent_Button' type='submit'>Submit</button>
             </form>
         </div>
     )

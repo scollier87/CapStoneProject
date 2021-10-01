@@ -35,15 +35,15 @@ function SplashPage() {
                 <h3>Toddlers Ages 2-3</h3>
             </div>
             <div className='newsFeedDiv_Container'>
-            <a href='https://www.cdc.gov/ncbddd/childdevelopment/positiveparenting/infants.html'><div className='spl_newsFeedDiv1'></div></a>
-            <a href='https://www.cdc.gov/ncbddd/childdevelopment/positiveparenting/toddlers.html'><div className='spl_newsFeedDiv2'></div></a>
-            <a href='https://www.cdc.gov/ncbddd/childdevelopment/positiveparenting/toddlers.html'><div className='spl_newsFeedDiv3'></div></a>
+            <a href='https://www.cdc.gov/ncbddd/childdevelopment/positiveparenting/infants.html' target='_blank'><div className='spl_newsFeedDiv1'></div></a>
+            <a href='https://www.cdc.gov/ncbddd/childdevelopment/positiveparenting/toddlers.html' target='_blank'><div className='spl_newsFeedDiv2'></div></a>
+            <a href='https://www.cdc.gov/ncbddd/childdevelopment/positiveparenting/toddlers.html' target='_blank'><div className='spl_newsFeedDiv3'></div></a>
             </div>
             </div>
             <div className='spl_Footer'>
-            <a href='https://github.com/scollier87'><img className='spl_About' src="https://img.icons8.com/ios/50/000000/github--v1.png" alt="GithubImage"/></a>
+            <a href='https://github.com/scollier87' target='_blank'><img className='spl_About' src="https://img.icons8.com/ios/50/000000/github--v1.png" alt="GithubImage"/></a>
             <h3>Created by Sean Collier</h3>
-            <a href='https://www.linkedin.com/in/sean-collier-65b32412b/'><img className='spl_About' src="https://img.icons8.com/ios/50/000000/linkedin.png" alt="LinkedinImage"/></a>
+            <a href='https://www.linkedin.com/in/sean-collier-65b32412b/' target='_blank'><img className='spl_About' src="https://img.icons8.com/ios/50/000000/linkedin.png" alt="LinkedinImage"/></a>
 
             </div>
         </div>

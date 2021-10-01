@@ -1,10 +1,27 @@
+.event_createFormBackground{
+    background-image: url('pastel-734432_1280.jpeg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: .5px solid transparent;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+
 .newEventFormContainer {
-border: 3px solid black;
-height: 400px;
-width: 400px;
-/* display: flex; */
-flex-direction: column;
-border-radius: 20px;
+    border: 3px solid lightcoral;
+    height: 400px;
+    width: 400px;
+    /* display: flex; */
+    flex-direction: column;
+    border-radius: 20px;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    right: 41%;
+    top: 10%;
 }
 
 .event_formFields{
@@ -49,3 +66,22 @@ border-radius: 20px;
     font-weight:lighter;
     display: block;
 }
+
+.eventList_HomeBtn{
+    font-size:medium;
+    margin-top: 15px;
+    padding:10px;
+    border-radius: 30px;
+    background-color:pink;
+    border: 8px solid lightblue;
+    color:rgb(18, 40,87);
+    width: 75px;
+    position: absolute;
+    font-weight:lighter;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    left: 88%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+

@@ -29,10 +29,9 @@ function NewBookingForm(){
         setFirst_name(e.target.value);
         // console.log(first_name)
         let temporaryErrors = {...errors}
-        if(!first_name.length || first_name.length > 12) {
-            temporaryErrors.first_name = 'First name can not be blank (2-12 characters).'
+        if(!first_name.length || first_name.length > 20) {
+            temporaryErrors.first_name = 'First name can not be blank (2-20 characters).'
             setErrors(temporaryErrors)
-
         }
         else{
             delete temporaryErrors.first_name;
@@ -44,8 +43,8 @@ function NewBookingForm(){
     const updateLast_name = (e) => {
         setLast_name(e.target.value);
         let temporaryErrors = {...errors}
-        if(!last_name.length || last_name >12) {
-            temporaryErrors.last_name = 'Last name can not be blank (2-12 characters).'
+        if(!last_name.length || last_name >20) {
+            temporaryErrors.last_name = 'Last name can not be blank (2-20 characters).'
             setErrors(temporaryErrors)
         }
         else{
@@ -56,7 +55,7 @@ function NewBookingForm(){
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(first_name.length > 2 && last_name.length < 12){
+        if(first_name.length > 2 && last_name.length < 20){
             const payload = {
                 owner_id : sessionUser.id,
                 event_id : +id,
@@ -68,35 +67,36 @@ function NewBookingForm(){
 
             const booking = dispatch(createOneBooking(payload))
                 if(booking){
-                    setTimeout(() => {
+                    // setTimeout(() => {
                         history.push(`/home`)
-                }, 100)}
+                // }, 100)
+            }
 
         }
     }
-    console.log(sessionUser.first_name)
+    // console.log(sessionUser.first_name)
     const currentErrors = Object.values(errors)
 
     return (
-        <div>
+        <div className='newBooking_OuterBackground'>
             <LogoutButton/>
             <Link to={`/home`} className='newBooking_HomeBtn'>Home</Link>
-            <ul>
+
+            <form className='newBookingFormContainer' onSubmit={handleSubmit}>
+             <ul>
                 {currentErrors.map((errors) => (
                     <li>
                         {errors}
                     </li>
                 ))}
             </ul>
-            <form className='newBookingFormContainer'>
-
                 <label className='booking_formLabel'>First Name?</label>
-                <input className='booking_formInput' defaultValue={sessionUser.first_name} onChange={updateFirst_name} type='text' minLength="2" maxLength="12" size="12" required></input>
+                <input className='booking_formInput' value={first_name} onChange={updateFirst_name} type='text' minLength="2" maxLength="20" size="22" required></input>
 
                 <label className='booking_formLabel'>Last Name?</label>
-                <input className='booking_formInput' defaultValue={sessionUser.last_name} onChange={updateLast_name} type='text' minLength="2" maxLength="12" size="12" required></input>
+                <input className='booking_formInput' value={last_name} onChange={updateLast_name} type='text' minLength="2" maxLength="20" size="22" required></input>
 
-                <button className='submitBooking_Button' type='submit' onClick={handleSubmit}>Submit</button>
+                <button className='submitBooking_Button' type='submit'>Submit</button>
             </form>
         </div>
     )

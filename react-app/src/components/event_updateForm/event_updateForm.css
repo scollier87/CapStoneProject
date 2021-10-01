@@ -1,27 +1,36 @@
 .updateEvent_container {
-    border: 3px solid black;
-    height: 400px;
-    width: 400px;
-    display: flex;
-    flex-direction: column;
+    background-image: url('pastel.webp');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: .5px solid transparent;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
     }
 
     .updateEvent_form{
-        border: 3px solid black;
+        border: 3px solid lightcoral;
         height: 400px;
         width: 400px;
-        display: flex;
+        /* display: flex; */
         flex-direction: column;
+        border-radius: 20px;
+        display: flex;
+        position: absolute;
         justify-content: center;
+        right: 41%;
+        top: 10%;
     }
 
-    .event_containerupdateLabel{
-        /* border: 3px solid black; */
+    /* .event_containerupdateLabel{
+        border: 3px solid black;
         height: 35px;
         width: 400px;
         display: flex;
         flex-direction: column;
-    }
+    } */
 
     .event_updateLabel{
         /* border: 2px solid black; */
@@ -38,6 +47,7 @@
         width: 200px;
         display: block;
         margin: 0 auto;
+        border-radius: 20px;
     }
 
     .event_updatedTextarea{
@@ -46,9 +56,9 @@
         width: 200px;
         display: block;
         margin: 0 auto;
+        border-radius: 20px;
         resize: none;
         overflow-y: scroll;
-
     }
 
     .eventButtonUpdate{
@@ -75,4 +85,23 @@
         margin-left: 20px;
         font: bold;
         background-color: transparent;
+        text-decoration: none;
+    }
+
+    .updatedEvent_HmBtn{
+        font-size:medium;
+        margin-top: 15px;
+        padding:10px;
+        border-radius: 30px;
+        background-color:pink;
+        border: 8px solid lightblue;
+        color:rgb(18, 40,87);
+        width: 75px;
+        position: absolute;
+        font-weight:lighter;
+        text-decoration: none;
+        display: flex;
+        justify-content: center;
+        left: 88%;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
