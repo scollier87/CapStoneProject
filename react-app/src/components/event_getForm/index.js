@@ -23,24 +23,28 @@ function GetAllEvents() {
     const filteredEvents = events.filter((event) => event.owner_id === sessionUser?.id)
 
     return (
-        <div className='eventList_container'>
+        <div className='eventList_background'>
             <Link to={`./home`} className='eventList_HomeBtn'>Home</Link>
             <LogoutButton/>
             <h1 className='eventList_containerLabel'>Events</h1>
+            <div className='eventList_container'>
+                <div className='getEventsContainerDivs'>
                 {filteredEvents.map((event) => (
-                    <>
-                    <p className='event_getKeys'>Time of Event: {event.event_time}</p>
-                    <p className='event_getKeys'>Number of hours: {event.duration}</p>
-                    <p className='event_getKeys'>Number of children: {event.how_many_kids}</p>
-                    <p className='event_getKeys'>Description: {event.description}</p>
-                    <p className='event_getKeys'>How much? ${event.cost}/hr</p>
-                    <div className='event_GetButtons'>
-                    <button className='deleteOneEvent' onClick={(e)=>handldDelete(event.id)}> Delete Event </button>
-                    <a  className='updateOneEvent_Button' href={`/events/${event.id}`}> Update Event </a>
-                    {/* <a className="bookEvent_button" href={`/bookings/${event.id}`}> Book Event? </a> */}
+                    <div className='getEventsContainer'>
+                        <p className='event_getKeys'>Time of Event: {event.event_time}</p>
+                        <p className='event_getKeys'>Number of hours: {event.duration}</p>
+                        <p className='event_getKeys'>Number of children: {event.how_many_kids}</p>
+                        <p className='event_getKeys'>Description: {event.description}</p>
+                        <p className='event_getKeys'>How much? ${event.cost}/hr</p>
+                        <div className='event_GetButtons'>
+                        <button className='deleteOneEvent' onClick={(e)=>handldDelete(event.id)}> Delete Event </button>
+                        <a  className='updateOneEvent_Button' href={`/events/${event.id}`}> Update Event </a>
+                        {/* <a className="bookEvent_button" href={`/bookings/${event.id}`}> Book Event? </a> */}
+                        </div>
                     </div>
-                    </>
                 ))}
+            </div>
+            </div>
         </div>
     )
 }

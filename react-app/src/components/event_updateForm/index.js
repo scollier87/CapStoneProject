@@ -117,13 +117,13 @@ function UpdateEventForm(){
                         <label className='event_updateLabel'>What time?</label>
                         <input className='event_updatedInput' defaultValue={event_time} onChange={updateEvent_time} type='datetime-local' min="2021-10-01T08:30" required></input>
                         <label className='event_formFields'>How many hours?</label>
-                        <input className='event_formInput' type='number' value={duration} onChange={updateDuration} min='1' max='8' required></input>
+                        <input className='event_formInput' type='number' value={duration} onChange={updateDuration} placeholder={filteredEvents[0]?.duration} min='1' max='8' required></input>
                         <label className='event_updateLabel'>How many kids?</label>
-                        <input className='event_updatedInput' type='number' value={how_many_kids} onChange={updateHow_many_kids} min='1' max='15' required></input>
+                        <input className='event_updatedInput' type='number' value={how_many_kids} onChange={updateHow_many_kids} placeholder={filteredEvents[0]?.how_many_kids} min='1' max='15' required></input>
                         <label className='event_updateLabel'>Describe what needs to be done.(50-200 characters)</label>
-                        <textarea className='event_updatedTextarea' type='text' value={description} onChange={updateDescription} minlength='50' maxlength='200' required></textarea>
+                        <textarea className='event_updatedTextarea' type='text' value={description} onChange={updateDescription} placeholder={filteredEvents[0]?.description} minlength='50' maxlength='200' required></textarea>
                         <label className='event_updateLabel'>How much are you paying?</label>
-                        <input className='event_updatedInput' type='number' value={cost} onChange={updateCost} min='15' max='200' required></input>
+                        <input className='event_updatedInput' type='number' value={cost} onChange={updateCost} placeholder={filteredEvents[0]?.cost} min='15' max='200' required></input>
                         <a className='eventButtonUpdate' href='/eventsupdate'><button className='actual_eventUpdateBtn' type='submit'>Update</button></a>
                 </form>
             </div>
