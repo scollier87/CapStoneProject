@@ -65,7 +65,7 @@ function NewEventForm(){
        setCost(e.target.value);
        let temporaryErrors = {...errors}
        if(e.target.value < 15 || e.target.value > 200) {
-           temporaryErrors.cost = `Choose an amount (50-200), no '$' required`
+           temporaryErrors.cost = `Choose an amount (15-200), no '$' required`
            setErrors(temporaryErrors)
        } else {
            delete temporaryErrors.cost

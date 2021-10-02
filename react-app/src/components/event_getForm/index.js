@@ -18,6 +18,7 @@ function GetAllEvents() {
 
     const handldDelete = (id) => {
         dispatch(deleteEvent(id))
+        history.push(`/home`)
     }
 
     const filteredEvents = events.filter((event) => event.owner_id === sessionUser?.id)

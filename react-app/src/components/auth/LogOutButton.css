@@ -1,12 +1,12 @@
 .LogOutButtonMain{
     font-size:medium;
-    margin-top: 15px;
+    margin: 15px;
     padding:10px;
     border-radius: 30px;
     background-color:pink;
     border: 8px solid lightblue;
     color:rgb(18, 40, 87);
     font-weight:lighter;
-    position: absolute;
+    position: fixed;
     right: 1%;
 }

@@ -74,9 +74,10 @@
         font-weight:lighter;
         display: block;
         text-decoration: none;
+        text-align: center;
     }
 
-    .actual_eventUpdateBtn{
+    /* .actual_eventUpdateBtn{
         text-decoration: none;
         border: none;
         background-color: lightblue;
@@ -86,7 +87,7 @@
         font: bold;
         background-color: transparent;
         text-decoration: none;
-    }
+    } */
 
     .updatedEvent_HmBtn{
         font-size:medium;

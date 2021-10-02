@@ -14,7 +14,7 @@ function Home() {
     // const event = useSelector((state) => Object.values(state.events))
     const bookings = useSelector((state) => Object.values(state?.booking))
     const [users, setUsers] = useState([]);
-
+    console.log(events?.event_id)
     useEffect(() => {
         async function fetchData() {
             const response = await fetch('/api/users/');
@@ -41,7 +41,7 @@ function Home() {
 
     const filteredEvents = events.filter((event) => event.owner_id !== sessionUser?.id);
     // const filteredBookings = bookings.filter(booking => booking.owner_id !== sessionUser?.id)
-
+    const filteredBookings = bookings.filter((booking) => booking?.owner_id !== sessionUser?.id);
     let wages = (hourlyRate, lengthOfEvent) => {
         return (hourlyRate * lengthOfEvent)
     }
@@ -68,8 +68,7 @@ function Home() {
                             <li className='hm_createdEvents'><strong>Number of Children:</strong>{event.how_many_kids}</li>
                             <li className='hm_createdEvents'><strong>Description:</strong>{event.description}</li>
                             <li className='hm_createdEvents'><strong>How much? ${event.cost}/hr</strong></li>
-                            <a className="bookEvent_button" href={`/bookings/${event.id}`}> Book Event? </a>
-                            {/* <button className="bookEvent_button" onClick={() =>handleSubmit(event?.id)}> Book Event? </button> */}
+                            <Link className="bookEvent_button" to={`/bookings/${event.id}`}> Book Event? </Link>
                         </div>
                     )}
                     </div>
