@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import { createOneBooking } from "../../store/booking";
@@ -17,7 +17,7 @@ function NewBookingForm(){
     const sessionUser = useSelector(state => state.session.user)
 
     // const [owner_id, setOwner_id] = useState('')
-    const [event_id, setEvent_id] = useState('')
+    // const [event_id, setEvent_id] = useState('')
     const [first_name, setFirst_name] = useState('')
     const [last_name, setLast_name] = useState('')
     const [errors, setErrors] = useState({})
@@ -29,7 +29,7 @@ function NewBookingForm(){
         setFirst_name(e.target.value);
         // console.log(first_name)
         let temporaryErrors = {...errors}
-        if(!first_name.length || first_name.length > 20) {
+        if(!e.target.value || e.target.value > 20) {
             temporaryErrors.first_name = 'First name can not be blank (2-20 characters).'
             setErrors(temporaryErrors)
         }
@@ -43,7 +43,7 @@ function NewBookingForm(){
     const updateLast_name = (e) => {
         setLast_name(e.target.value);
         let temporaryErrors = {...errors}
-        if(!last_name.length || last_name >20) {
+        if(!e.target.value || e.target.value >20) {
             temporaryErrors.last_name = 'Last name can not be blank (2-20 characters).'
             setErrors(temporaryErrors)
         }
@@ -55,7 +55,7 @@ function NewBookingForm(){
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        if(first_name.length > 2 && last_name.length < 20){
+        if(first_name.length > 1 && last_name.length < 20){
             const payload = {
                 owner_id : sessionUser.id,
                 event_id : +id,
@@ -67,9 +67,9 @@ function NewBookingForm(){
 
             const booking = dispatch(createOneBooking(payload))
                 if(booking){
-                    // setTimeout(() => {
+                    setTimeout(() => {
                         history.push(`/home`)
-                // }, 100)
+                }, 500)
             }
 
         }
