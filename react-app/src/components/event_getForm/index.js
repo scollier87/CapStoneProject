@@ -34,7 +34,7 @@ function GetAllEvents() {
             <div className='eventList_container'>
                 <div className='getEventsContainerDivs'>
                 {filteredEvents.map((event) => (
-                    <div className='getEventsContainer'>
+                    <div className='getEventsContainer' key={event.id}>
                         <p className='event_getKeys'>Time of Event: {event.event_time}</p>
                         <p className='event_getKeys'>Number of hours: {event.duration}</p>
                         <p className='event_getKeys'>Number of children: {event.how_many_kids}</p>

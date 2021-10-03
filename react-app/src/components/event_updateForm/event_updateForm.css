@@ -102,8 +102,8 @@
         background-color:pink;
         border: 8px solid lightblue;
         color:rgb(18, 40,87);
-        width: 75px;
-        position: absolute;
+        /* width: 75px; */
+        /* position: absolute; */
         font-weight:lighter;
         text-decoration: none;
         display: flex;
