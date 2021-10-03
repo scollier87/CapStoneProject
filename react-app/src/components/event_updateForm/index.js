@@ -19,7 +19,7 @@ function UpdateEventForm(){
     // console.log(events, event)
 
     const filteredEvents = events?.filter((event) => +event.id === +id)
-    console.log(filteredEvents, 'filteredEvents')
+    // console.log(filteredEvents, 'filteredEvents')
 
     const [event_time, setEvent_time] = useState('')
     const [duration, setDuration] = useState('')
