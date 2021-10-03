@@ -14,7 +14,7 @@ function Home() {
     // const event = useSelector((state) => Object.values(state.events))
     const bookings = useSelector((state) => Object.values(state?.booking))
     const [users, setUsers] = useState([]);
-    console.log(bookings)
+    console.log(sessionUser)
     useEffect(() => {
         async function fetchData() {
             const response = await fetch('/api/users/');
@@ -100,7 +100,7 @@ function Home() {
                             <li className='hm_createdBookings'><strong>Parent:</strong> {`${fetchUserTable(booking?.events[0]?.owner_id)?.first_name} ${fetchUserTable(booking?.events[0]?.owner_id)?.last_name}`}</li>
                             <li className='hm_createdBookings'><strong>Babysitter:</strong> {booking?.first_name} {booking?.last_name} </li>
                             <li className='hm_createdBookings'><strong>Time of Event:</strong> {booking?.events[0]?.event_time}</li>
-                            <li className='hm_createdBookings'><strong>{booking[0]?.first_name} is being paid ${wages(booking?.events[0]?.cost, booking?.events[0]?.duration)} for {booking?.events[0]?.duration} hours.</strong> </li>
+                            <li className='hm_createdBookings'><strong>{booking?.first_name} is being paid ${wages(booking?.events[0]?.cost, booking?.events[0]?.duration)} for {booking?.events[0]?.duration} hours.</strong> </li>
                             <li className='hm_createdBookings'></li>
                             {sessionUser?.id === booking?.owner_id && <button className='faviconTrash' onClick={()=>handleDelete(booking?.id)}><img src="https://img.icons8.com/color/48/000000/recycle-bin.png"/></button>}
                         </div>
