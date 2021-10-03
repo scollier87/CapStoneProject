@@ -14,7 +14,7 @@ function Home() {
     // const event = useSelector((state) => Object.values(state.events))
     const bookings = useSelector((state) => Object.values(state?.booking))
     const [users, setUsers] = useState([]);
-    console.log(sessionUser)
+    // console.log(sessionUser)
     useEffect(() => {
         async function fetchData() {
             const response = await fetch('/api/users/');
