@@ -13,7 +13,8 @@ function SplashPage() {
         <>
 
          <div className='spl_container'>
-             <LogoutButton to='/login'/>
+             {/* <LogoutButton to='/login'/> */}
+             <div className='middle_div'>
             <div className='spl_containerLeft'>
                 <div className='spl_containerLeftImg'>
                     <h3 className='h3_tag'>Sign Up</h3>
@@ -26,6 +27,7 @@ function SplashPage() {
                     <h3 className='h3_tags'>Log In</h3>
                     <LoginForm/>
                 </div>
+            </div>
             </div>
             {/* <h3>Popular Articles</h3> */}
             <div className='spl_newsFeed'>

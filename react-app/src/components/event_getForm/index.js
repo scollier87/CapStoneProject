@@ -16,17 +16,21 @@ function GetAllEvents() {
         dispatch(getEvents());
     }, [dispatch]);
 
-    const handldDelete = (id) => {
-        dispatch(deleteEvent(id))
+    const handldDelete = async (id) => {
+        await dispatch(deleteEvent(id))
+        await dispatch(getEvents())
+        history.push(`/home`)
     }
 
     const filteredEvents = events.filter((event) => event.owner_id === sessionUser?.id)
 
     return (
         <div className='eventList_background'>
-            <Link to={`./home`} className='eventList_HomeBtn'>Home</Link>
+            <div className='eventHeader'>
+            <Link className='eventList_HomeBtn' to={`./home`} >Home</Link>
+            <h1 className='eventList_containerLabel1'>Events</h1>
             <LogoutButton/>
-            <h1 className='eventList_containerLabel'>Events</h1>
+            </div>
             <div className='eventList_container'>
                 <div className='getEventsContainerDivs'>
                 {filteredEvents.map((event) => (
@@ -38,7 +42,7 @@ function GetAllEvents() {
                         <p className='event_getKeys'>How much? ${event.cost}/hr</p>
                         <div className='event_GetButtons'>
                         <button className='deleteOneEvent' onClick={(e)=>handldDelete(event.id)}> Delete Event </button>
-                        <a  className='updateOneEvent_Button' href={`/events/${event.id}`}> Update Event </a>
+                        <Link  className='updateOneEvent_Button' to={`/events/${event.id}`}> Update Event </Link>
                         {/* <a className="bookEvent_button" href={`/bookings/${event.id}`}> Book Event? </a> */}
                         </div>
                     </div>

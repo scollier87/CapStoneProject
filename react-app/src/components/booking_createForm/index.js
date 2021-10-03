@@ -79,9 +79,10 @@ function NewBookingForm(){
 
     return (
         <div className='newBooking_OuterBackground'>
-            <LogoutButton/>
+            <div className='newBooking_Header'>
             <Link to={`/home`} className='newBooking_HomeBtn'>Home</Link>
-
+            <LogoutButton/>
+            </div>
             <form className='newBookingFormContainer' onSubmit={handleSubmit}>
              <ul>
                 {currentErrors.map((errors) => (

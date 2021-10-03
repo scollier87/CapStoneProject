@@ -51,7 +51,7 @@ function NewEventForm(){
    const updateDescription = (e) => {
        setDescription(e.target.value);
        let temporaryErrors = {...errors}
-       if(e.target.value < 50 || e.target.value > 200)  {
+       if(description.length <= 50 || description.length >= 200)  {
            temporaryErrors.description = 'Description must be between 50-200 characters.'
            setErrors(temporaryErrors)
        } else {
@@ -65,7 +65,7 @@ function NewEventForm(){
        setCost(e.target.value);
        let temporaryErrors = {...errors}
        if(e.target.value < 15 || e.target.value > 200) {
-           temporaryErrors.cost = `Choose an amount (50-200), no '$' required`
+           temporaryErrors.cost = `Choose an amount (15-200), no '$' required`
            setErrors(temporaryErrors)
        } else {
            delete temporaryErrors.cost
@@ -94,12 +94,14 @@ function NewEventForm(){
     }
 
     const currentErrors = Object.values(errors)
-
+    const date = new Date()
+    console.log(date)
     return(
         <div className='event_createFormBackground'>
+            <div className='createEvent_header'>
             <Link className='eventList_HomeBtn' to={`./home`} >Home</Link>
             <LogoutButton/>
-
+            </div>
             <form className='newEventFormContainer' onSubmit={handleSubmit}>
                 <ul>
                 {currentErrors.map((errors) => (
@@ -109,7 +111,7 @@ function NewEventForm(){
                     ))}
                 </ul>
                 <label className='event_formFields'>What time is the event Event?</label>
-                <input className='event_formInput' Defaultvalue={event_time} onChange={updateEvent_time} type='datetime-local' min={"2021-10-01T08:30"} required></input>
+                <input className='event_formInput' value={event_time} onChange={updateEvent_time} type='datetime-local' min={new Date().toISOString().slice(0, -8)} required></input>
                 <label className='event_formFields'>How many hours?</label>
                 <input className='event_formInput' type='number' value={duration} onChange={updateDuration} min='1' max='8' required></input>
                 <label className='event_formFields'>How many children?(1-15)</label>

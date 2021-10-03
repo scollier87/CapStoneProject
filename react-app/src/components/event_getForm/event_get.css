@@ -2,7 +2,7 @@
     background-image: url('pinknblue.jpeg');
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    border: .5px solid transparent;
+    border: .5px;
     height: 100vh;
     position: absolute;
     top: 0;
@@ -15,18 +15,22 @@
     margin-top: 700px;
 }
 
+.eventHeader{
+    display: flex;
+    justify-content: space-around;
+}
 .eventList_container{
     /* border: 3px solid black; */
-    height: auto;
-    width: 100%;
+    height: 90vh;
+    width: 49vh;
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     background-color: transparent;
     /* background-color: lightblue; */
-    /* border-radius: 20px; */
-    padding-top: 20px;
+    border-radius: 20px;
+    /* padding-top: 50px; */
     text-align: center;
     font-weight: bold;
     font-size: larger;
@@ -34,8 +38,8 @@
     color: palevioletred;
     /* border-radius: 20px; */
     position: absolute;
-    top: 100px;
-    left: 0;
+    top: 110px;
+    left: 36%;
     right: 0;
     bottom: 0;
     overflow-y: scroll;
@@ -49,29 +53,32 @@
     background-color: white;
     border-radius: 20px;
     padding: 15px;
-    /* overflow-y: scroll; */
+
 }
-.eventList_containerLabel {
+.eventList_containerLabel1 {
     display: flex;
     justify-content: center;
-    display: block;
-    margin: 0 auto;
+    /* display: block; */
+    /* margin: 0 auto; */
     /* border: 3px solid black; */
-    height: 100px;
-    width: 525px;
+    /* height: 100px; */
+    /* width: 5%; */
     background-color: transparent;
-    margin-bottom: 8%;
+    /* margin-bottom: 8%; */
+    /* margin-top: 2%;
+    top: 3%; */
     /* padding-top: 5px; */
+    /* padding-left: 25%; */
 }
 
 .event_getKeys{
     /* border: 3px solid black; */
     background-color: transparent;
-    height: 120px;
+    height: 125px;
     width: 525px;
     display: block;
     margin: 0 auto;
-    padding-top: 4%;
+    padding-top: 1%;
 }
 
 .deleteOneEvent{
@@ -126,4 +133,23 @@
     /* margin-left: 820px; */
     padding-bottom: 45px;
     margin-bottom: 25px;
+}
+
+.eventList_HomeBtn{
+    font-size:medium;
+    margin-top: 15px;
+    padding:10px;
+    border-radius: 30px;
+    background-color:pink;
+    border: 8px solid lightblue;
+    color:rgb(18, 40,87);
+    width: 75px;
+    /* position: absolute; */
+    font-weight:lighter;
+    text-decoration: none;
+    display: absolute;
+    justify-content: center;
+    top: 7%;
+    left: 93%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

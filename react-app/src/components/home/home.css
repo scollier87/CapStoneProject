@@ -12,16 +12,21 @@
     bottom: 0;
 }
 
+.hm_header{
+    display: flex;
+    justify-content: space-around;
+}
+
 .CurrentEventsTag{
     position: absolute;
-    margin-top: 5%;
+    margin-top: 6%;
     margin-left: 7%;
 }
 
 .babysittingEventsTag{
     background-color: white;
     position: absolute;
-    top:11%;
+    top:17.5%;
     left: 80%;
 }
 
@@ -30,7 +35,7 @@
     width: 400px;
     overflow: auto;
     position: fixed;
-    top: 175px;
+    top: 275px;
     bottom: 100px;
     left: 50px;
     border-radius: 25px;
@@ -39,19 +44,20 @@
 
 .hm_createEventButton{
     font-size:medium;
-    margin-top: 15px;
+    margin: 15px;
     padding:10px;
     border-radius: 30px;
     background-color:pink;
     border: 8px solid lightblue;
     color:rgb(18, 40,87);
     width: 145px;
-    position: absolute;
+    /* position: fixed; */
     font-weight:lighter;
     text-decoration: none;
-    display: flex;
+    display: absolute;
     justify-content: center;
-    left: 77%;
+    left: 68%;
+    top:1%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -67,8 +73,8 @@
     width: 400px;
     overflow: auto;
     position: fixed;
-    top: 200px;
-    bottom: 500px;
+    top: 320px;
+    bottom: 300px;
     right: 50px;
     border-radius: 25px;
     padding: 1%;
@@ -100,19 +106,20 @@
 
 .hm_myEventsButton{
     font-size:medium;
-    margin-top: 15px;
+    margin: 15px;
     padding:10px;
     border-radius: 30px;
     background-color:lightblue;
     border: 8px solid pink;
     color:rgb(196, 69, 90);
-    width: 100px;
-    position: absolute;
+    width: 105px;
+    /* position: fixed; */
     font-weight:lighter;
     text-decoration: none;
     display: flex;
     justify-content: center;
-    left: 87%;
+    left: 45%;
+    top: 1%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -120,18 +127,22 @@
     /* border: 3px solid black; */
     display: flex;
     justify-content: center;
-    height: 140px;
+    height: 125px;
     width: 700px;
     margin-left: 720px;
-    margin-top: 200px;
+    margin-top: 8%;
     background-color: white;
 }
 
 .tellMore{
+    /* border: black 3px solid; */
     background-color: white;
-    position: absolute;
-    right: 40%;
-    top: 13%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    margin-left: 38%;
+    margin-top: 10%;
+    top: 15%;
     color: crimson;
 }
 

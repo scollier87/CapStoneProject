@@ -10,17 +10,22 @@
     bottom: 0;
 }
 
+.createEvent_header{
+    display: flex;
+    justify-content: space-around;
+}
+
 .newEventFormContainer {
     border: 3px solid lightcoral;
-    height: 400px;
-    width: 400px;
+    height: 40%;
+    width: 20%;
     /* display: flex; */
     flex-direction: column;
-    border-radius: 20px;
+    border-radius: 2%;
     display: flex;
     position: absolute;
     justify-content: center;
-    right: 41%;
+    right: 40%;
     top: 10%;
 }
 
@@ -44,8 +49,8 @@
 
 .event_forInputTextArea{
     border: 2px solid black;
-    height: 25px;
-    width: 200px;
+    height: 12%;
+    width: 75%;
     display: block;
     margin: 0 auto;
     border-radius: 20px;
@@ -76,12 +81,12 @@
     border: 8px solid lightblue;
     color:rgb(18, 40,87);
     width: 75px;
-    position: absolute;
+    /* position: absolute; */
     font-weight:lighter;
     text-decoration: none;
     display: flex;
     justify-content: center;
-    left: 88%;
+    top: 0%;
+    right: 92%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
