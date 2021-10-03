@@ -12,9 +12,14 @@
     bottom: 0;
 }
 
+.hm_header{
+    display: flex;
+    justify-content: space-around;
+}
+
 .CurrentEventsTag{
     position: absolute;
-    margin-top: 9%;
+    margin-top: 6%;
     margin-left: 7%;
 }
 
@@ -46,13 +51,13 @@
     border: 8px solid lightblue;
     color:rgb(18, 40,87);
     width: 145px;
-    position: fixed;
+    /* position: fixed; */
     font-weight:lighter;
     text-decoration: none;
     display: absolute;
     justify-content: center;
-    left: 89%;
-    top:12%;
+    left: 68%;
+    top:1%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -69,7 +74,7 @@
     overflow: auto;
     position: fixed;
     top: 320px;
-    bottom: 500px;
+    bottom: 300px;
     right: 50px;
     border-radius: 25px;
     padding: 1%;
@@ -108,13 +113,13 @@
     border: 8px solid pink;
     color:rgb(196, 69, 90);
     width: 105px;
-    position: fixed;
+    /* position: fixed; */
     font-weight:lighter;
     text-decoration: none;
     display: flex;
     justify-content: center;
-    left: 91%;
-    top: 6%;
+    left: 45%;
+    top: 1%;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -122,17 +127,21 @@
     /* border: 3px solid black; */
     display: flex;
     justify-content: center;
-    height: 140px;
+    height: 125px;
     width: 700px;
     margin-left: 720px;
-    margin-top: 250px;
+    margin-top: 8%;
     background-color: white;
 }
 
 .tellMore{
+    /* border: black 3px solid; */
     background-color: white;
-    position: absolute;
-    right: 40%;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    margin-left: 38%;
+    margin-top: 10%;
     top: 15%;
     color: crimson;
 }

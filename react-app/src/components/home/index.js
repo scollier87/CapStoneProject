@@ -14,7 +14,7 @@ function Home() {
     // const event = useSelector((state) => Object.values(state.events))
     const bookings = useSelector((state) => Object.values(state?.booking))
     const [users, setUsers] = useState([]);
-    console.log(events?.event_id)
+    console.log(events)
     useEffect(() => {
         async function fetchData() {
             const response = await fetch('/api/users/');
@@ -42,19 +42,29 @@ function Home() {
     const filteredEvents = events.filter((event) => event.owner_id !== sessionUser?.id);
     // const filteredBookings = bookings.filter(booking => booking.owner_id !== sessionUser?.id)
     const filteredBookings = bookings.filter((booking) => booking?.owner_id !== sessionUser?.id);
+
     let wages = (hourlyRate, lengthOfEvent) => {
+        // console.log(hourlyRate, lengthOfEvent)
         return (hourlyRate * lengthOfEvent)
     }
+
+
+    const isEventOpen = (event => {
+        for(let booking of bookings) {
+            if(booking.event_id === event.id){
+                return true
+            }
+        }
+        return false
+    })
 
     return (
         <div className='hm_backgroundOuter'>
             <>
-            <LogoutButton/>
             <div className='hm_header'>
                 <Link to={`./eventsuser`} className='hm_myEventsButton'>My Events</Link>
-            </div>
-            <div >
                 <Link to={`./events`} className='hm_createEventButton'>Create an Event</Link>
+                <LogoutButton/>
             </div>
             <h1 className='CurrentEventsTag'>Current Events</h1>
             <div className='hm_myCreatedEventsContainer'>
@@ -68,7 +78,7 @@ function Home() {
                             <li className='hm_createdEvents'><strong>Number of Children:</strong>{event.how_many_kids}</li>
                             <li className='hm_createdEvents'><strong>Description:</strong>{event.description}</li>
                             <li className='hm_createdEvents'><strong>How much? ${event.cost}/hr</strong></li>
-                            <Link className="bookEvent_button" to={`/bookings/${event.id}`}> Book Event? </Link>
+                            {!isEventOpen(event) ? <Link className="bookEvent_button" to={`/bookings/${event.id}`}> Book Event? </Link> :<></>}
                         </div>
                     )}
                     </div>
@@ -90,7 +100,7 @@ function Home() {
                             <li className='hm_createdBookings'><strong>Parent:</strong> {`${fetchUserTable(booking?.events[0]?.owner_id)?.first_name} ${fetchUserTable(booking?.events[0]?.owner_id)?.last_name}`}</li>
                             <li className='hm_createdBookings'><strong>Babysitter:</strong> {booking?.first_name} {booking?.last_name} </li>
                             <li className='hm_createdBookings'><strong>Time of Event:</strong> {booking?.events[0]?.event_time}</li>
-                            <li className='hm_createdBookings'><strong>{booking?.first_name} is being paid ${wages(booking?.events[0]?.cost, booking?.events[0]?.duration)}.</strong> </li>
+                            <li className='hm_createdBookings'><strong>{booking?.first_name} is being paid ${wages(booking?.events[0]?.cost, booking?.events[0]?.duration)} for {booking?.events[0]?.duration} hours.</strong> </li>
                             <li className='hm_createdBookings'></li>
                             {sessionUser?.id === booking?.owner_id && <button className='faviconTrash' onClick={()=>handleDelete(booking?.id)}><img src="https://img.icons8.com/color/48/000000/recycle-bin.png"/></button>}
                         </div>

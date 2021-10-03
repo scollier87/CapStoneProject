@@ -10,6 +10,11 @@
     bottom: 0;
     }
 
+    .updateEvent_heder{
+        display: flex;
+        justify-content: space-around;
+    }
+
     .updateEvent_form{
         border: 3px solid lightcoral;
         height: 400px;
@@ -52,8 +57,8 @@
 
     .event_updatedTextarea{
         border: 2px solid black;
-        height: 25px;
-        width: 200px;
+        height: 12%;
+        width: 75%;
         display: block;
         margin: 0 auto;
         border-radius: 20px;

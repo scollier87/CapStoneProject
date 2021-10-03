@@ -118,9 +118,10 @@ function UpdateEventForm(){
 
         return(
             <div className='updateEvent_container'>
+                <div className='updateEvent_heder'>
                 <Link className='updatedEvent_HmBtn' to={`/home`} >Home</Link>
                 <LogoutButton/>
-
+                </div>
                 <form className='updateEvent_form' onSubmit={handleSubmit}>
                         <ul>
                         {currentErrors.map((errors) => (

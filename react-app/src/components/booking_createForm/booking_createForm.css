@@ -10,6 +10,11 @@
     bottom: 0;
 }
 
+.newBooking_Header{
+    display: flex;
+    justify-content: space-around;
+}
+
 .newBookingFormContainer{
     border: 3px solid lightblue;
     height: 400px;
@@ -76,7 +81,7 @@
     border: 8px solid lightblue;
     color:rgb(18, 40,87);
     width: 75px;
-    position: absolute;
+    /* position: absolute; */
     font-weight:lighter;
     text-decoration: none;
     display: flex;

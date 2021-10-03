@@ -7,6 +7,6 @@
     border: 8px solid lightblue;
     color:rgb(18, 40, 87);
     font-weight:lighter;
-    position: fixed;
+    /* position: fixed; */
     right: 1%;
 }
