@@ -52,6 +52,7 @@
     color:rgb(18, 40,87);
     width: 145px;
     /* position: fixed; */
+    text-align: center;
     font-weight:lighter;
     text-decoration: none;
     display: absolute;

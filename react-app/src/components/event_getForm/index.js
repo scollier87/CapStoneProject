@@ -28,7 +28,7 @@ function GetAllEvents() {
         <div className='eventList_background'>
             <div className='eventHeader'>
             <Link className='eventList_HomeBtn' to={`./home`} >Home</Link>
-            <h1 className='eventList_containerLabel1'>Events</h1>
+            <h1 className='eventList_containerLabel1'><strong>Events</strong></h1>
             <LogoutButton/>
             </div>
             <div className='eventList_container'>

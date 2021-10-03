@@ -11,10 +11,17 @@
     width: auto;
 }
 
+.middle_div{
+    display: flex;
+    justify-content: space-evenly;
+    /* border: 3px solid black; */
+    margin-top: 10%;
+}
+
 .spl_containerLeft{
     border: 3px solid black;
-    margin-top: 100px;
-    margin-left: 375px;
+    /* margin-top: 100px; */
+    /* margin-left: 375px; */
     height: 500px;
     width: 400px;
     display: flex;
@@ -32,13 +39,14 @@
 
 .spl_containerRight{
     border: 3px solid black;
-    margin-top: -500px;
-    margin-left: 1325px;
+    /* margin-top: -500px;
+    margin-left: 1325px; */;
     height: 500px;
     width: 400px;
     display: flex;
     justify-content: center;
-    /* align-items: center; */
+    flex-direction: column;
+    align-items: center;
     border-radius: 12px;
 }
 
@@ -135,7 +143,7 @@
     /* border: 3px solid black; */
     height: 500px;
     width: 500px;
-    position: absolute;
+    /* position: absolute; */
     top: 9%;
     right: 39%;
     background-image: url('Baby Sitting Needs (1).png');

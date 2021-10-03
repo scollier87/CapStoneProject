@@ -9,7 +9,7 @@
     right: 0;
     left: 0;
     bottom: 0;
-    overflow-y: none;
+    /* overflow-y: none; */
     overflow-y: scroll;
     padding-bottom:50px;
 
@@ -20,6 +20,7 @@
     height: 80vh;
     /* border: black 3px solid; */
     margin-bottom: 3%;
+    padding-bottom: 2%;
 
 }
 
@@ -60,7 +61,7 @@
     border: black 3px solid;
     height: auto;
     width: fit-content;
-    margin-bottom: 4%;
+    margin-bottom: 5%;
     background-color: white;
     border-radius: 20px;
     padding: 15px;

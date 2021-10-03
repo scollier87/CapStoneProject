@@ -23,10 +23,10 @@ function SplashPage() {
             </div>
             <div className='canva'></div>
             <div className='spl_containerRight'>
-                <div className='spl_containerRightImg'>
+                {/* <div className='spl_containerRightImg'> */}
                     <h3 className='h3_tags'>Log In</h3>
                     <LoginForm/>
-                </div>
+                {/* </div> */}
             </div>
             </div>
             {/* <h3>Popular Articles</h3> */}
