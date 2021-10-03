@@ -6,6 +6,7 @@ import { useParams } from "react-router";
 import './booking_createForm.css'
 import { Link } from "react-router-dom";
 import LogoutButton from "../auth/LogoutButton";
+import { getEvents } from "../../store/event";
 
 function NewBookingForm(){
     const {id} = useParams()
@@ -67,9 +68,10 @@ function NewBookingForm(){
 
             const booking = dispatch(createOneBooking(payload))
                 if(booking){
-                    setTimeout(() => {
+                    // setTimeout(() => {
+                        getEvents()
                         history.push(`/home`)
-                }, 500)
+                // }, 500)
             }
 
         }
