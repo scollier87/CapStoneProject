@@ -123,11 +123,13 @@ function UpdateEventForm(){
                 <LogoutButton/>
                 </div>
                 <form className='updateEvent_form' onSubmit={handleSubmit}>
-                        <ul>
-                        {currentErrors.map((errors) => (
-                            <li>
+                        <ul >
+                        {currentErrors.map((errors, ind) => (
+                            <div key={ind}>
+                            <li >
                                 {errors}
                             </li>
+                            </div>
                         ))}
                         </ul>
                         <label className='event_updateLabel'>Time can not be updated.</label>

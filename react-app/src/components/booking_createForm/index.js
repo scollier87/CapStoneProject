@@ -68,10 +68,10 @@ function NewBookingForm(){
 
             const booking = dispatch(createOneBooking(payload))
                 if(booking){
-                    // setTimeout(() => {
+                    setTimeout(() => {
                         getEvents()
                         history.push(`/home`)
-                // }, 500)
+                }, 500)
             }
 
         }

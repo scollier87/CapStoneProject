@@ -11,10 +11,10 @@ function Home() {
     const dispatch = useDispatch();
     const sessionUser = useSelector(state => state.session.user)
     const events = useSelector((state) => Object.values(state.event))
-    // const event = useSelector((state) => Object.values(state.events))
+    const event = useSelector((state) => (state?.event))
     const bookings = useSelector((state) => Object.values(state?.booking))
     const [users, setUsers] = useState([]);
-    // console.log(sessionUser)
+    // console.log(event)
     useEffect(() => {
         async function fetchData() {
             const response = await fetch('/api/users/');
@@ -25,8 +25,8 @@ function Home() {
     }, []);
 
     useEffect(() => {
-        dispatch(getEvents());
         dispatch(getBookings());
+        dispatch(getEvents());
     }, [dispatch])
 
     const handleDelete = (id) => {
@@ -71,7 +71,7 @@ function Home() {
                 <div>
                     <div>
                     {filteredEvents.map((event) =>
-                        <div className='hm_createdEventsBorder'>
+                        <div className='hm_createdEventsBorder' key={event.id}>
                             <li className='hm_createdEvents'><strong>Parent:</strong>{`${fetchUserTable(event?.owner_id)?.first_name} ${fetchUserTable(event?.owner_id)?.last_name}`}</li>
                             <li className='hm_createdEvents'><strong>Time of Event:</strong> {event.event_time}</li>
                             <li className='hm_createdEvents'><strong>How many hours:</strong> {event.duration}</li>
@@ -96,7 +96,7 @@ function Home() {
                 <div>
                     <div>
                     {bookings.map((booking) =>
-                        <div className='hm_createBookingsBorder'>
+                        <div className='hm_createBookingsBorder'key={booking.id}>
                             <li className='hm_createdBookings'><strong>Parent:</strong> {`${fetchUserTable(booking?.events[0]?.owner_id)?.first_name} ${fetchUserTable(booking?.events[0]?.owner_id)?.last_name}`}</li>
                             <li className='hm_createdBookings'><strong>Babysitter:</strong> {booking?.first_name} {booking?.last_name} </li>
                             <li className='hm_createdBookings'><strong>Time of Event:</strong> {booking?.events[0]?.event_time}</li>
