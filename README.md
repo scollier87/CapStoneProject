@@ -32,7 +32,7 @@ that other users have posted.
 # Website Hosting
 - Heroku
 
-##Future Plans for Baby Sitting Needs
+## Future Plans for Baby Sitting Needs
 - Features would include reviews for users based on a babysitter, making a user be able to sign up as a parent or a babysitter and either user will have different permissions throughout the website. Also to be able to impliment a Profile Picture where you can have CRUD features.
 - Optimize the website for mobile Views
 
