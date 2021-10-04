@@ -17,15 +17,15 @@
 
 .newEventFormContainer {
     border: 3px solid lightcoral;
-    height: 40%;
-    width: 20%;
+    height: 400px;
+    width: 400px;
     /* display: flex; */
     flex-direction: column;
     border-radius: 2%;
     display: flex;
     position: absolute;
     justify-content: center;
-    right: 40%;
+    right: 41%;
     top: 10%;
 }
 

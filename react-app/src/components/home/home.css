@@ -4,8 +4,8 @@
     background-repeat: no-repeat;
     border: .5px solid transparent;
     /* justify-content: center; */
-    height: 100vh;
-    display: absolute;
+    /* height: 100vh; */
+    position: absolute;
     top: 0;
     right: 0;
     left: 0;
@@ -14,24 +14,66 @@
 
 .hm_header{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
+.hm_titlesDiv{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 2%;
+    color: lightpink;
+}
 .CurrentEventsTag{
-    position: absolute;
-    margin-top: 6%;
-    margin-left: 7%;
+    /* border: lightpink solid 3px; */
+    background-color: white;
+    margin: 2%;
+    color: rgb(14, 112, 145);
+    border-radius: 20px;
+    /* padding: 2%; */
+    /* position: absolute; */
+    /* margin-top: 6%;
+    margin-left: 7%; */
+}
+
+.tellMore{
+    /* border: black 3px solid; */
+    background-color: white;
+    /* display: flex;
+    justify-content: center; */
+    margin: 2%;
+    margin-left: 9%;
+    /* width: 20%; */
+    /* display: flex; */
+    /* justify-content: center; */
+    /* margin-left: 38%;
+    margin-top: 10%;
+    top: 15%; */
+    color: crimson;
 }
 
 .babysittingEventsTag{
     background-color: white;
-    position: absolute;
-    top:17.5%;
-    left: 80%;
+    /* border: black 3px solid; */
+    margin: 2%;
+    /* position: absolute; */
+    /* top:17.5%;
+    left: 80%; */
+}
+
+.hm_bottomDivContainer{
+    display: flex;
+    justify-content: space-evenly;
+    /* margin: 5%; */
 }
 
 .hm_myCreatedEventsContainer{
-    border: 3px solid lightblue;
+    /* display: flex;
+    justify-content: space-evenly;
+    height: 80%;
+    width: 50%; */
+    flex-direction: row;
+    margin: 3%;
+    /* border: 3px solid lightblue;
     width: 400px;
     overflow: auto;
     position: fixed;
@@ -39,7 +81,60 @@
     bottom: 100px;
     left: 50px;
     border-radius: 25px;
-    padding: 1%;
+    padding: 1%; */
+}
+
+.hm_createdEventsBorderDiv{
+    border:lightblue solid 3px;
+    height: 650px;
+    width: auto;
+    border-radius: 20px;
+    /* margin: 5%; */
+    /* padding: 1%; */
+    overflow-y: scroll;;
+}
+
+.hm_createdEventsBorder{
+    border: 3px solid lightpink;
+    height: 70%px;
+    margin-bottom: 5%;
+    border-radius: 20px;
+    background-color: white;
+    width: auto;
+    overflow: auto;
+    padding: 3%;
+    border-radius: 20px;
+    /* padding-left: 7px;
+    padding-right: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.hm_bioDiv{
+    /* border: 3px solid black; */
+    /* display: flex;
+    justify-content: center; */
+    height: 25%;
+    width: 45%;
+    /* margin-left: 720px; */
+    margin-top: 2%;
+    background-color: white;
+}
+
+.hm_myCreatedBookingsContainer{
+    border:3px solid lightpink;
+    width: 40%;
+    height: 40%;
+    overflow-y: scroll;
+    background-color: white;
+    margin: 3%;
+    /* position: fixed; */
+    /* top: 320px; */
+    /* bottom: 300px;
+    right: 50px; */
+    border-radius: 20px;
+    /* padding: 1%; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .hm_createEventButton{
@@ -47,9 +142,9 @@
     margin: 15px;
     padding:10px;
     border-radius: 30px;
-    background-color:pink;
-    border: 8px solid lightblue;
-    color:rgb(18, 40,87);
+    background-color:lightblue;
+    border: 8px solid lightpink;
+    color:rgb(196, 69, 90);
     width: 145px;
     /* position: fixed; */
     text-align: center;
@@ -69,18 +164,6 @@
     /* border-radius: 30px; */
 }
 
-.hm_myCreatedBookingsContainer{
-    border:3px solid lightpink;
-    width: 400px;
-    overflow: auto;
-    position: fixed;
-    top: 320px;
-    bottom: 300px;
-    right: 50px;
-    border-radius: 25px;
-    padding: 1%;
-}
-
 .hm_createdBookings{
     list-style-type: none;
     text-decoration: none;
@@ -95,7 +178,7 @@
     border-radius: 30px;
     background-color:lightblue;
     border: 8px solid pink;
-    color:rgb(196, 69, 90);
+    color: rgb(18, 40,87);
     width: 125px;
     font-weight:lighter;
     display: block;
@@ -105,14 +188,15 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+
 .hm_myEventsButton{
     font-size:medium;
     margin: 15px;
     padding:10px;
     border-radius: 30px;
-    background-color:lightblue;
-    border: 8px solid pink;
-    color:rgb(196, 69, 90);
+    background-color:pink;
+    border: 8px solid lightblue;
+    color:rgb(18, 40,87);
     width: 105px;
     /* position: fixed; */
     font-weight:lighter;
@@ -121,41 +205,6 @@
     justify-content: center;
     left: 45%;
     top: 1%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-.hm_bioDiv{
-    /* border: 3px solid black; */
-    display: flex;
-    justify-content: center;
-    height: 125px;
-    width: 700px;
-    margin-left: 720px;
-    /* margin-top: 8%; */
-    background-color: white;
-}
-
-.tellMore{
-    /* border: black 3px solid; */
-    background-color: white;
-    width: 25%;
-    display: flex;
-    justify-content: center;
-    margin-left: 38%;
-    margin-top: 10%;
-    top: 15%;
-    color: crimson;
-}
-
-.hm_createdEventsBorder{
-    border: 3px solid lightpink;
-    margin-bottom: 5%;
-    border-radius: 20px;
-    background-color: white;
-    padding-left: 7px;
-    padding-right: 5px;
-    padding-top: 5px;
-    padding-bottom: 5px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
@@ -207,7 +256,7 @@
 .faviconTrash{
     background-color: transparent;
     border: none;
-    display: flex;
-    margin-left: 85%;
+    /* display: flex; */
+    margin-left: 80%;
 
 }
