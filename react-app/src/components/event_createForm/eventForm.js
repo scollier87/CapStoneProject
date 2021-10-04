@@ -54,7 +54,7 @@ function NewEventForm(){
        if(description.length <= 50 || description.length >= 200)  {
            temporaryErrors.description = 'Description must be between 50-200 characters.'
            setErrors(temporaryErrors)
-       } else {
+       }else {
            delete temporaryErrors.description
            setErrors(temporaryErrors)
        }
