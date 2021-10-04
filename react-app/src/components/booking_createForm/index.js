@@ -34,7 +34,7 @@ function NewBookingForm(){
             temporaryErrors.first_name = 'First name can not be blank (2-20 characters).'
             setErrors(temporaryErrors)
         }
-        if(e.target.value.includes(' ')){
+        if(e.target.value.includes('  ')){
             temporaryErrors.first_name = 'No whitespace allowed.'
             setErrors(temporaryErrors)
         }else{
@@ -51,7 +51,7 @@ function NewBookingForm(){
             temporaryErrors.last_name = 'Last name can not be blank (2-20 characters).'
             setErrors(temporaryErrors)
         }
-        if(e.target.value.includes(' ')){
+        if(e.target.value.includes('  ')){
             temporaryErrors.last_name = 'No whitespace allowed'
             setErrors(temporaryErrors)
         }else{
