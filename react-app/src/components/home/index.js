@@ -68,7 +68,7 @@ function Home() {
             </div>
             <div className='hm_titlesDiv'>
             <h1 className='CurrentEventsTag'>Current Events</h1>
-            <h1 className='tellMore'>Welcome to Baby Sitting Needs {sessionUser.first_name}!</h1>
+            <h1 className='tellMore'>Welcome to Baby Sitting Needs {sessionUser.username}!</h1>
             <h1 className='babysittingEventsTag'>Babysitting Events</h1>
             </div>
                 <div className='hm_bottomDivContainer'>
