@@ -66,49 +66,49 @@ function Home() {
                 <Link to={`./events`} className='hm_createEventButton'>Create an Event</Link>
                 <LogoutButton/>
             </div>
+            <div className='hm_titlesDiv'>
             <h1 className='CurrentEventsTag'>Current Events</h1>
-            <div className='hm_myCreatedEventsContainer'>
-                <div>
-                    <div>
-                    {filteredEvents.map((event) =>
-                        <div className='hm_createdEventsBorder' key={event.id}>
-                            <li className='hm_createdEvents'><strong>Parent:</strong>{`${fetchUserTable(event?.owner_id)?.first_name} ${fetchUserTable(event?.owner_id)?.last_name}`}</li>
-                            <li className='hm_createdEvents'><strong>Time of Event:</strong> {event.event_time}</li>
-                            <li className='hm_createdEvents'><strong>How many hours:</strong> {event.duration}</li>
-                            <li className='hm_createdEvents'><strong>Number of Children:</strong>{event.how_many_kids}</li>
-                            <li className='hm_createdEvents'><strong>Description:</strong>{event.description}</li>
-                            <li className='hm_createdEvents'><strong>How much? ${event.cost}/hr</strong></li>
-                            {!isEventOpen(event) ? <Link className="bookEvent_button" to={`/bookings/${event.id}`}> Book Event? </Link> :<></>}
-                        </div>
-                    )}
-                    </div>
-                </div>
-            </div>
-                <h1 className='tellMore'>Welcome to Baby Sitting Needs {sessionUser.first_name}!</h1>
-            <div className='hm_bioDiv'>
-                <h1>Hello Everyone, if you are a parent, start creating your
-                    events. If you are a babysitter, start booking and making
-                    money. Or do both!
-                </h1>
-            </div>
+            <h1 className='tellMore'>Welcome to Baby Sitting Needs {sessionUser.first_name}!</h1>
             <h1 className='babysittingEventsTag'>Babysitting Events</h1>
-            <div className='hm_myCreatedBookingsContainer'>
-                <div>
-                    <div>
-                    {bookings.map((booking) =>
-                        <div className='hm_createBookingsBorder'key={booking.id}>
-                            <li className='hm_createdBookings'><strong>Parent:</strong> {`${fetchUserTable(booking?.events[0]?.owner_id)?.first_name} ${fetchUserTable(booking?.events[0]?.owner_id)?.last_name}`}</li>
-                            <li className='hm_createdBookings'><strong>Babysitter:</strong> {booking?.first_name} {booking?.last_name} </li>
-                            <li className='hm_createdBookings'><strong>Time of Event:</strong> {booking?.events[0]?.event_time}</li>
-                            <li className='hm_createdBookings'><strong>{booking?.first_name} is being paid ${wages(booking?.events[0]?.cost, booking?.events[0]?.duration)} for {booking?.events[0]?.duration} hours.</strong> </li>
-                            <li className='hm_createdBookings'></li>
-                            {sessionUser?.id === booking?.owner_id && <button className='faviconTrash' onClick={()=>handleDelete(booking?.id)}><img src="https://img.icons8.com/color/48/000000/recycle-bin.png"/></button>}
-                        </div>
-                    )}
-                    </div>
-                    {/* <Link to={`/bookingsuser`} className='hm_myBookingsButton'>My Bookings</Link> */}
-                </div>
             </div>
+                <div className='hm_bottomDivContainer'>
+                    <div className='hm_myCreatedEventsContainer'>
+                        {/* <div> */}
+                            <div className='hm_createdEventsBorderDiv'>
+                            {filteredEvents.map((event) =>
+                                <div className='hm_createdEventsBorder' key={event.id}>
+                                    <li className='hm_createdEvents'><strong>Parent:</strong>{`${fetchUserTable(event?.owner_id)?.first_name} ${fetchUserTable(event?.owner_id)?.last_name}`}</li>
+                                    <li className='hm_createdEvents'><strong>Time of Event:</strong> {event.event_time}</li>
+                                    <li className='hm_createdEvents'><strong>How many hours:</strong> {event.duration}</li>
+                                    <li className='hm_createdEvents'><strong>Number of Children:</strong>{event.how_many_kids}</li>
+                                    <li className='hm_createdEvents'><strong>Description:</strong>{event.description}</li>
+                                    <li className='hm_createdEvents'><strong>How much? ${event.cost}/hr</strong></li>
+                                    {!isEventOpen(event) ? <Link className="bookEvent_button" to={`/bookings/${event.id}`}> Book Event? </Link> :<></>}
+                                </div>
+                            )}
+                            </div>
+                        {/* </div> */}
+                    </div>
+                    <div className='hm_bioDiv'>
+                        <h1>Hello Everyone, if you are a parent, start creating your
+                            events. If you are a babysitter, start booking and making
+                            money. Or do both!
+                        </h1>
+                    </div>
+                    <div className='hm_myCreatedBookingsContainer'>
+                            {bookings.map((booking) =>
+                                <div className='hm_createBookingsBorder'key={booking.id}>
+                                    <li className='hm_createdBookings'><strong>Parent:</strong> {`${fetchUserTable(booking?.events[0]?.owner_id)?.first_name} ${fetchUserTable(booking?.events[0]?.owner_id)?.last_name}`}</li>
+                                    <li className='hm_createdBookings'><strong>Babysitter:</strong> {booking?.first_name} {booking?.last_name} </li>
+                                    <li className='hm_createdBookings'><strong>Time of Event:</strong> {booking?.events[0]?.event_time}</li>
+                                    <li className='hm_createdBookings'><strong>{booking?.first_name} is being paid ${wages(booking?.events[0]?.cost, booking?.events[0]?.duration)} for {booking?.events[0]?.duration} hours.</strong> </li>
+                                    <li className='hm_createdBookings'></li>
+                                    {sessionUser?.id === booking?.owner_id && <button className='faviconTrash' onClick={()=>handleDelete(booking?.id)}><img src="https://img.icons8.com/color/48/000000/recycle-bin.png"/></button>}
+                                </div>
+                            )}
+                            {/* <Link to={`/bookingsuser`} className='hm_myBookingsButton'>My Bookings</Link> */}
+                    </div>
+                </div>
             {/* <div className='hm_images'>
                 <div className='hm_imagesDiv'></div>
                 <div className='hm_imagesDiv1'>Images1</div>
