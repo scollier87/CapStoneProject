@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { createOneBooking } from "../../store/booking";
+import { createOneBooking, getBookings } from "../../store/booking";
 import { useParams } from "react-router";
 import './booking_createForm.css'
 import { Link } from "react-router-dom";
@@ -30,11 +30,14 @@ function NewBookingForm(){
         setFirst_name(e.target.value);
         // console.log(first_name)
         let temporaryErrors = {...errors}
-        if(!e.target.value || e.target.value > 20) {
+        if(!e.target.value || e.target.value.length > 20) {
             temporaryErrors.first_name = 'First name can not be blank (2-20 characters).'
             setErrors(temporaryErrors)
         }
-        else{
+        if(e.target.value.includes(' ')){
+            temporaryErrors.first_name = 'No whitespace allowed.'
+            setErrors(temporaryErrors)
+        }else{
             delete temporaryErrors.first_name;
             setErrors(temporaryErrors)
         }
@@ -48,13 +51,16 @@ function NewBookingForm(){
             temporaryErrors.last_name = 'Last name can not be blank (2-20 characters).'
             setErrors(temporaryErrors)
         }
-        else{
+        if(e.target.value.includes(' ')){
+            temporaryErrors.last_name = 'No whitespace allowed'
+            setErrors(temporaryErrors)
+        }else{
             delete temporaryErrors.last_name;
             setErrors(temporaryErrors)
         }
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
         if(first_name.length > 1 && last_name.length < 20){
             const payload = {
@@ -66,12 +72,13 @@ function NewBookingForm(){
 
             }
 
-            const booking = dispatch(createOneBooking(payload))
+            const booking = await dispatch(createOneBooking(payload))
                 if(booking){
-                    setTimeout(() => {
-                        getEvents()
+                    // setTimeout(() => {
+                        await dispatch(getBookings())
+                        await dispatch(getEvents())
                         history.push(`/home`)
-                }, 500)
+                // }, 500)
             }
 
         }
