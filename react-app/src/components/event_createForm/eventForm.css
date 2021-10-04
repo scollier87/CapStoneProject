@@ -17,7 +17,7 @@
 
 .newEventFormContainer {
     border: 3px solid lightcoral;
-    height: 400px;
+    height: 500px;
     width: 400px;
     /* display: flex; */
     flex-direction: column;
