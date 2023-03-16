@@ -1,4 +1,4 @@
-from .db import db
+from .db import db, environment, SCHEMA, add_prefix_for_prod
 from sqlalchemy.schema import ForeignKey
 from sqlalchemy.orm import relationship
 from .user import User
@@ -8,8 +8,11 @@ import datetime
 class Event(db.Model):
     __tablename__ = 'events'
 
+    if environment == "production":
+        __table_args__ = {'schema': SCHEMA}
+
     id = db.Column(db.Integer, primary_key=True)
-    owner_id = db.Column(db.Integer, ForeignKey('users.id'), nullable=False)
+    owner_id = db.Column(db.Integer, db.ForeignKey(add_prefix_for_prod('users.id')), nullable=False)
     event_time = db.Column(db.DateTime, nullable=False)
     duration = db.Column(db.Integer)
     how_many_kids = db.Column(db.Integer, nullable=False)

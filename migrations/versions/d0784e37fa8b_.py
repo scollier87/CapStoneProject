@@ -8,6 +8,9 @@ Create Date: 2021-09-30 13:09:10.207545
 from alembic import op
 import sqlalchemy as sa
 from sqlalchemy.dialects import postgresql
+import os
+environment = os.getenv("FLASK_ENV")
+SCHEMA = os.environ.get("SCHEMA")
 
 # revision identifiers, used by Alembic.
 revision = 'd0784e37fa8b'
@@ -21,30 +24,52 @@ def upgrade():
     op.alter_column('bookings', 'first_name',
                existing_type=sa.VARCHAR(length=30),
                nullable=False)
+    if environment == "production":
+        op.execute(f"ALTER TABLE bookings SET SCHEMA {SCHEMA};")
     op.alter_column('bookings', 'last_name',
                existing_type=sa.VARCHAR(length=30),
                nullable=False)
+    if environment == "production":
+        op.execute(f"ALTER TABLE bookings SET SCHEMA {SCHEMA};")
     op.alter_column('events', 'event_time',
                existing_type=postgresql.TIMESTAMP(),
                nullable=False)
+    if environment == "production":
+        op.execute(f"ALTER TABLE events SET SCHEMA {SCHEMA};")
     op.alter_column('events', 'duration',
                existing_type=sa.INTEGER(),
                nullable=True)
+    if environment == "production":
+        op.execute(f"ALTER TABLE events SET SCHEMA {SCHEMA};")
     op.alter_column('events', 'how_many_kids',
                existing_type=sa.INTEGER(),
                nullable=False)
+    if environment == "production":
+        op.execute(f"ALTER TABLE events SET SCHEMA {SCHEMA};")
     op.alter_column('events', 'description',
                existing_type=sa.VARCHAR(length=300),
                nullable=False)
+    if environment == "production":
+        op.execute(f"ALTER TABLE events SET SCHEMA {SCHEMA};")
     op.alter_column('events', 'cost',
                existing_type=sa.INTEGER(),
                nullable=False)
+    if environment == "production":
+        op.execute(f"ALTER TABLE events SET SCHEMA {SCHEMA};")
     op.alter_column('reviews', 'body',
                existing_type=sa.VARCHAR(length=250),
                nullable=False)
+    if environment == "production":
+        op.execute(f"ALTER TABLE reviews SET SCHEMA {SCHEMA};")
     op.add_column('users', sa.Column('username', sa.String(length=25), nullable=False))
+    if environment == "production":
+        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
     op.create_unique_constraint(None, 'users', ['username'])
+    if environment == "production":
+        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
     op.drop_column('users', 'parent_pic')
+    if environment == "production":
+        op.execute(f"ALTER TABLE users SET SCHEMA {SCHEMA};")
     # ### end Alembic commands ###
 
 
