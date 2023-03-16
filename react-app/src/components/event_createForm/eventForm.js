@@ -95,7 +95,6 @@ function NewEventForm(){
 
     const currentErrors = Object.values(errors)
     const date = new Date()
-    console.log(date)
     return(
         <div className='event_createFormBackground'>
             <div className='createEvent_header'>

@@ -28,7 +28,6 @@ function NewBookingForm(){
 
     const updateFirst_name = (e) => {
         setFirst_name(e.target.value);
-        // console.log(first_name)
         let temporaryErrors = {...errors}
         if(!e.target.value || e.target.value.length > 20) {
             temporaryErrors.first_name = 'First name can not be blank (2-20 characters).'
@@ -83,7 +82,6 @@ function NewBookingForm(){
 
         }
     }
-    // console.log(sessionUser.first_name)
     const currentErrors = Object.values(errors)
 
     return (

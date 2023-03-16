@@ -14,7 +14,6 @@ function Home() {
     const event = useSelector((state) => (state?.event))
     const bookings = useSelector((state) => Object.values(state?.booking))
     const [users, setUsers] = useState([]);
-    // console.log(event)
     useEffect(() => {
         async function fetchData() {
             const response = await fetch('/api/users/');
@@ -44,7 +43,6 @@ function Home() {
     const filteredBookings = bookings.filter((booking) => booking?.owner_id !== sessionUser?.id);
 
     let wages = (hourlyRate, lengthOfEvent) => {
-        // console.log(hourlyRate, lengthOfEvent)
         return (hourlyRate * lengthOfEvent)
     }
 

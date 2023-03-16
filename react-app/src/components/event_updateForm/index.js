@@ -14,12 +14,8 @@ function UpdateEventForm(){
     const history = useHistory();
     const sessionUser = useSelector(state => state.session.user);
     const events = useSelector((state) => Object.values(state.event));
-    // console.log(events)
-    // const event = events.find(event => event?.id === +id)
-    // console.log(events, event)
 
     const filteredEvents = events?.filter((event) => +event.id === +id)
-    // console.log(filteredEvents, 'filteredEvents')
 
     const [event_time, setEvent_time] = useState('')
     const [duration, setDuration] = useState('')
@@ -84,7 +80,6 @@ function UpdateEventForm(){
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        console.log(filteredEvents[0]?.event_time)
         const payload ={
             id : +id,
             owner_id : sessionUser?.id,

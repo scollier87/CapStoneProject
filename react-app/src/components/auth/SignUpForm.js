@@ -21,7 +21,6 @@ const SignUpForm = () => {
       const data = await dispatch(signUp(username, first_name, last_name, email, password));
       if (data) {
         setErrors(data)
-        console.log(errors)
       }
     }
   };
@@ -119,7 +118,6 @@ const SignUpForm = () => {
   }
 
   const currentErrors = Object.values(errors)
-  console.log(username)
   return (
     <div className='submitButton_form'>
     <form onSubmit={onSignUp}>
