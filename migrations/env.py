@@ -8,6 +8,8 @@ from sqlalchemy import pool
 
 from alembic import context
 
+from flask import current_app
+
 import os
 environment = os.getenv("FLASK_ENV")
 SCHEMA = os.environ.get('SCHEMA')
@@ -106,4 +108,3 @@ if context.is_offline_mode():
     run_migrations_offline()
 else:
     run_migrations_online()
-    
