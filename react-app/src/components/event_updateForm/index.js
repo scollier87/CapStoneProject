@@ -17,14 +17,14 @@ function UpdateEventForm(){
 
     const filteredEvents = events?.filter((event) => +event.id === +id)
 
-    const [event_time, setEvent_time] = useState('')
+    // const [event_time, setEvent_time] = useState('')
     const [duration, setDuration] = useState('')
     const [how_many_kids, setHow_many_kids] = useState('')
     const [description, setDescription] = useState('')
     const [cost, setCost] = useState('')
     const [errors, setErrors] = useState({})
 
-    const updateEvent_time = (e) => setEvent_time(e.target.value);
+    // const updateEvent_time = (e) => setEvent_time(e.target.value);
 
     const updateDuration = (e) => {
         setDuration(e.target.value);

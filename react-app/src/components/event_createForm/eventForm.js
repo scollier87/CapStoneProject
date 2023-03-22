@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import { createOneEvent, updateEvent } from '../../store/event'
+import { createOneEvent } from '../../store/event'
 import { Link } from 'react-router-dom'
 import LogoutButton from '../auth/LogoutButton'
 import './eventForm.css'
@@ -22,7 +22,7 @@ function NewEventForm(){
     // const startTime = Date.now()
 
 
-    const updateEvent_time = (e) => setEvent_time(e.target.value);
+    // const updateEvent_time = (e) => setEvent_time(e.target.value);
 
     const updateDuration = (e) => {
         setDuration(e.target.value);
@@ -110,7 +110,7 @@ function NewEventForm(){
                     ))}
                 </ul>
                 <label className='event_formFields'>What time is the event Event?</label>
-                <input className='event_formInput' value={event_time} onChange={updateEvent_time} type='datetime-local' min={new Date().toISOString().slice(0, -8)} required></input>
+                {/* <input className='event_formInput' value={event_time} onChange={updateEvent_time} type='datetime-local' min={new Date().toISOString().slice(0, -8)} required></input> */}
                 <label className='event_formFields'>How many hours?</label>
                 <input className='event_formInput' type='number' value={duration} onChange={updateDuration} min='1' max='8' required></input>
                 <label className='event_formFields'>How many children?(1-15)</label>

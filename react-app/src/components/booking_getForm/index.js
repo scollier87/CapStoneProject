@@ -9,10 +9,10 @@ import './booking_getForm.css'
 
 function GetAllBookings() {
     const dispatch = useDispatch();
-    const history = useHistory();
+    // const history = useHistory();
     const sessionUser = useSelector(state => state.session.user);
     const bookings = useSelector((state) => Object.values(state.booking));
-    const events = useSelector((state) => Object.values(state.event))
+    // const events = useSelector((state) => Object.values(state.event))
 
     const [users, setUsers] = useState([]);
 
