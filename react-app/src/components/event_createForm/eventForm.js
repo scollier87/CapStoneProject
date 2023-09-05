@@ -51,8 +51,8 @@ function NewEventForm(){
    const updateDescription = (e) => {
        setDescription(e.target.value);
        let temporaryErrors = {...errors}
-       if(description.length <= 50 || description.length >= 200)  {
-           temporaryErrors.description = 'Description must be between 50-200 characters.'
+       if(description.length <= 10 || description.length >= 200)  {
+           temporaryErrors.description = 'Description must be between 10-200 characters.'
            setErrors(temporaryErrors)
        }else {
            delete temporaryErrors.description
